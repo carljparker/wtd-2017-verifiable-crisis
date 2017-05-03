@@ -1,0 +1,52 @@
+---
+title: "The Verifiability Crisis in Science, Tech Writing, and Life"
+author: Carl Parker
+date: May 14, 2017
+output: ioslides_presentation
+---
+
+# The Experiment Experiment
+
+<div class="notes">
+This is my *note*.
+
+- It can contain markdown
+- like this list
+
+</div>
+
+## The Results
+
+- Only 29 of the experiements could be replicated.
+
+## Fake News
+
+![picture of spaghetti](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+----
+
+```{bash}
+ls
+```
+
+----
+
+<font color='blue'>"There has been a great deal of hype surrounding
+neural networks, making them seem magical and mysterious. As we make clear in this section, they are just nonlinear statistical models..." (ESL, p.392)</font>
+
+---
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
