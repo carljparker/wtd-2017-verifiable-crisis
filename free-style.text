@@ -105,6 +105,37 @@ of the research paper doesn't just display the code that was used to
 analyze the data, building the document actually recreates the analysis
 of the data.
 
+RMarkdown Output
+
+RMarkdown leverages Pandoc to process the markdown component of the
+source document. So RMarkdown supports any output format supported by
+Pandoc.
+
+And I have kind of a funny story about that . . . at HBO, the technical
+writing team is part of the larger Design organization and I report to
+the VP of design, Ryan. Well, Ryan is a Keynote afficianado and was
+somewhat aghast at my slides . . . I am not a designer.
+
+Reproducible Research and RMarkdown has taken hold in the Data Science
+and Statistics communities, but it hasn't been all Rainbows and
+Unicorns. In <MONTH>, the New England Journal of Medicine published an
+op-ed that said that they were not getting onboard with Reproducible
+Research. Their view is that the data that comes out of scientific
+research is the IP of the researchers and papers that our published in
+the New England Journal will not be accompanied by data. 
+
+So we will have to see how this all unfolds over the next few years.
+
+Technical Writing
+
+When Yuhui, designed knitr, he foresaw that researchers might want to
+use programming languages other than R for their analysis. So it made
+the language processor extensible . . . and then proceeded to extend it.
+
+Here is a list of the languages currently supported in RMarkdown. So,
+here is fibonnaci written in Python.
+
+
 
 
 
