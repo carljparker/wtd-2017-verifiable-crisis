@@ -46,6 +46,52 @@ neural networks, making them seem magical and mysterious. As we make clear in th
 
 ---
 
+
+```{python}
+from bs4 import BeautifulSoup
+import urllib2
+import re
+ 
+#
+# Need the following line to prevent 403 error on Wikipedia.
+#
+header  = {'User-Agent': 'Mozilla/5.0'} 
+
+#
+# Wikipedia page about the electoral college.
+#
+wiki    = "https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution"
+
+request = urllib2.Request( wiki, headers = header )
+page    = urllib2.urlopen( request )
+
+#
+# Parse the HTML
+#
+soup    = BeautifulSoup( page, "html.parser" )
+
+#
+# Find the table that shows the electoral votes.
+#
+table   = soup.find("table", { "class" : "wikitable" })
+                     
+outfileName = "electoral-college.csv"
+with open( outfileName, 'w' ) as folderOut:
+  for row in table.findAll( "tr" ):
+    cells = row.findAll( "td" )
+    if 2 == len( cells ):
+      if re.search( "=", cells[ 0 ].find( text = True ) ):
+        continue
+      for string in cells[ 1 ].strings: 
+        states = string.split( "," )
+        for state in states:
+          state = state.strip()
+          if len( state ) != 0:
+            folderOut.write( cells[ 0 ].find( text = True ) + ", " )
+            folderOut.write( state + "\n" )
+```
+
+
 ## Going to sleep
 
 - Get in bed
