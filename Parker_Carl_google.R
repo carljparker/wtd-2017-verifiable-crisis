@@ -1,60 +1,10 @@
-# 
-# Carl Parker
-# Carl.Parker@hbo.com
-# 206.388.6677
-#
-# StatR 503: Advanced R Programming And Graphics
-# 
-# Homework <homework number>
-# 
-
-#
-# Template for this file is located at:
-#
-#   ~/git/gtdev/R-language/template-prog.R
-#
-
-#
-# Add an initial @knitr section
-#
-
-## @knitr Prolog 
-
-#
-# Need to set directory for this @knitr section to do the `source()`
-# below.
-#
-setwd( "/Users/cparker/git/gtwork/talks/wtd/7102-wtd/google-sheets" )
-getwd()
-
-
-#
-# --- Sourced Files ---
-#
-source( "code/preamble.R" )
 
 
 #
 # --- Library Dependencies ---
 #
+library( tidyr )
 library( googlesheets )
-
-
-#
-# --- Function Definitions ---
-#
-
-
-#
-# Set repeatable random seed using my zip code.
-#
-set.seed(98122)
-
-
-#
-# Initialize logging functionality
-#
-logger.init()
 
 
 ## @knitr q1a 
@@ -62,12 +12,6 @@ logger.init()
 # Set working directory for this knitr chunk
 #
 setwd( "/Users/cparker/git/gtwork/talks/wtd/7102-wtd/google-sheets" )
-
-
-#
-# --- Get the data ---
-#
-logdebug( "Read data from CSV." )
 
 
 #
@@ -99,8 +43,6 @@ electoral.votes.df <- read.csv(
 # -*- -*- -*- #
 
 names( electoral.votes.df ) <- c( "electoral.votes", "state" )
-
-dex.dataframe( electoral.votes.df )
 
 sum( electoral.votes.df$electoral.votes )
 
@@ -159,14 +101,6 @@ votes.all.states.df$State[ votes.all.states.df$winner != votes.all.states.df$win
 # NYT Clinton Archipelego
 # <https://www.nytimes.com/interactive/2016/11/16/us/politics/the-two-americas-of-2016.html>
 #
-
-logdebug( "Program complete." )
-
-
-## @knitr q1c 
-
-
-## @knitr q1d 
 
 
 # --- END ---
