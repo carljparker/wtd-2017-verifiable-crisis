@@ -135,6 +135,22 @@ the language processor extensible . . . and then proceeded to extend it.
 Here is a list of the languages currently supported in RMarkdown. So,
 here is fibonnaci written in Python.
 
+Okay, so we've briefed ourselves on the reproducibility crisis and the
+methods that the data science and statistics communities have devised to
+counter it. Now, I want to talk about how this effects our field,
+technical writing, as well as broader information environment.
+
+First technical writing.
+
+As someone who has written a lot of developer-facing documentation, I
+often find myself thinking about Stack Overflow--and what makes Stack
+Overflow so compelling for so many developers.
+
+I think there is more than one reason, but I want to focus on one in
+particular, and I want to illustrate that by telling your about an
+experience I had when I first go out of college.
+
+
 
 
 
@@ -155,4 +171,30 @@ https://fivethirtyeight.com/features/what-a-difference-2-percentage-points-makes
 So let's look at an intelligent document that verifies that what Nate
 says is true.
 
+---
+
+You see a lot of statistics sloshing in the media. I see that stuff and
+I think what I earth. 
+
+[Kirk]
+
+I think: how am I supposed to interpret this stuff.
+
+Oh, that statistic over there. That sounds pretty good. I'll believe
+that. But hmmm, that statistic over there. That doesn't sound so good. I
+won't believe that one.
+
+These methods that come to use from Reproducible research. Ultimately,
+these methods are the solution to that problem. Providing a reference is
+good. But in the future, this will be the gold standard of
+verifiability.
+
+I want to see a future, where every statistic provides either the code
+and the data or a reference to a reproducible research paper that
+provides the code and data.
+
+And then, we can put an end to fake news for good.
+
+
+--- END ---
 
