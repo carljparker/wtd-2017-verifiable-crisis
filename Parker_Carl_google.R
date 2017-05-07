@@ -3,15 +3,8 @@
 #
 # --- Library Dependencies ---
 #
-library( tidyr )
+library( magrittr )
 library( googlesheets )
-
-
-## @knitr q1a 
-#
-# Set working directory for this knitr chunk
-#
-setwd( "/Users/cparker/git/gtwork/talks/wtd/7102-wtd/google-sheets" )
 
 
 #
@@ -30,29 +23,10 @@ electoral.votes.df <- read.csv(
                          comment.char="#" 
                        )
 
-#
-# --- Explore the data ---
-#
-
-#
-# The following line is a nice way to set off 
-# data exploration code inside a production
-# context.
-#
-
-# -*- -*- -*- #
-
 names( electoral.votes.df ) <- c( "electoral.votes", "state" )
 
 sum( electoral.votes.df$electoral.votes )
 
-# -*- -*- -*- #
-
-
-## @knitr q1b 
-#
-# Set working directory for this knitr chunk
-#
 setwd( "/Users/cparker/git/gtwork/talks/wtd/7102-wtd/google-sheets" )
 
 
@@ -62,16 +36,6 @@ official.gs <- gs_url( c( "https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvt
 
 official.gs %>% gs_read( range = "A12:D24" )
 
-#
-# Include the (mostly) blank row above the range that we want because
-# the googlesheets package treats the first row of the range specified
-# as a header row that contains column names.
-#
-official.gs %>% gs_read( range = "A11:D24" )
-
-#
-# Or . . . you can specify col_names = FALSE . . .
-#
 swing.df   <- official.gs %>% gs_read( range = "A12:D24", col_names = FALSE ) %>% data.frame()
 
 noswing.df <- official.gs %>% gs_read( range = "A27:D64", col_names = FALSE ) %>% data.frame()
