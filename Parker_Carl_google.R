@@ -1,5 +1,4 @@
 
-
 #
 # --- Library Dependencies ---
 #
@@ -23,35 +22,37 @@ electoral.votes.df <- read.csv(
                          comment.char="#" 
                        )
 
-names( electoral.votes.df ) <- c( "electoral.votes", "state" )
+names( electoral.votes.df ) <- c( "Electoral.Votes", "State" )
+head( electoral.votes.df )
 
 sum( electoral.votes.df$electoral.votes )
-
-setwd( "/Users/cparker/git/gtwork/talks/wtd/7102-wtd/google-sheets" )
-
-
-gs_ls()
 
 official.gs <- gs_url( c( "https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/" ) ) 
 
 official.gs %>% gs_read( range = "A12:D24" )
 
 swing.df   <- official.gs %>% gs_read( range = "A12:D24", col_names = FALSE ) %>% data.frame()
-
 noswing.df <- official.gs %>% gs_read( range = "A27:D64", col_names = FALSE ) %>% data.frame()
 
 votes.all.states.df <- rbind( swing.df, noswing.df )
 names( votes.all.states.df  )<- c( "State", "Clinton", "Trump", "Other" )
+head( votes.all.states.df )
+gsub( "\\*", "", votes.all.states.df$State )
+
+pop.elect.votes.all.states.df <- merge( votes.all.states.df, electoral.votes.df )
+head( pop.elect.votes.all.states.df )
+
+intersect( votes.all.states.df$State, electoral.votes.df$State )
 
 head( votes.all.states.df )
 
-votes.all.states.df$winner <- ifelse( votes.all.states.df$Trump > votes.all.states.df$Clinton, "Trump", "Clinton" )
-votes.all.states.df$trump.one.pct <- floor( votes.all.states.df$Trump * 0.0075 )
+( votes.all.states.df$winner        <- ifelse( votes.all.states.df$Trump > votes.all.states.df$Clinton, "Trump", "Clinton" ) )
+( votes.all.states.df$trump.one.pct <- floor( votes.all.states.df$Trump * 0.0075 ) )
 
-votes.all.states.df$Clinton.retally <- votes.all.states.df$Clinton + votes.all.states.df$trump.one.pct
-votes.all.states.df$Trump.retally   <- votes.all.states.df$Trump   - votes.all.states.df$trump.one.pct
+( votes.all.states.df$Clinton.retally <- votes.all.states.df$Clinton + votes.all.states.df$trump.one.pct )
+( votes.all.states.df$Trump.retally   <- votes.all.states.df$Trump   - votes.all.states.df$trump.one.pct )
 
-votes.all.states.df$winner.retally  <- ifelse( votes.all.states.df$Trump.retally > votes.all.states.df$Clinton.retally, "Trump", "Clinton" )
+( votes.all.states.df$winner.retally  <- ifelse( votes.all.states.df$Trump.retally > votes.all.states.df$Clinton.retally, "Trump", "Clinton" ) )
 
 votes.all.states.df$State[ votes.all.states.df$winner != votes.all.states.df$winner.retally ]
 
