@@ -74,8 +74,9 @@ programming code to be embedded in Markdown documents.
 What is Markdown?
 
 Markdown is a light-weight markup language that has received wide-spread
-adoption in recent years. It was invented by John Gruber of Daring
-Fireball. 
+adoption in recent years. It provides and simpler authoring experience
+than an industrial strength XML authoring environment. It was invented
+by John Gruber of Daring Fireball. 
 
 Provide links to gruber and DF twitter feeds.
 
@@ -150,6 +151,63 @@ I think there is more than one reason, but I want to focus on one in
 particular, and I want to illustrate that by telling your about an
 experience I had when I first go out of college.
 
+My first job was doing technical support for Intel Corporation not far
+from here actually in Hillsboro, OR. This was 1988 and we did not
+have email, just to give you a sense of what we were dealing with at the
+time. My job was to help Intel's engineering customers use the 386
+processor. The 386 could operate in different modes _Real Mode_ and
+_Protect Mode_. One of my customers was stuck trying to transition the
+386 from real mode into protected mode. So, I sent the customer some
+sample code that performed that operation. 
+
+About a week later, my boss received a letter from the customer. A
+letter, because as I mentioned: no email. The letter expressed how happy
+the customer was with the service they had received. In particular, the
+customer was astonished that the sample code that I had had actually
+worked. Evidently, this was not typical. This was 1988.
+
+A lot has changed in our industry since then, but this issue of sample
+code not working is perrenial. Every doc team seems to have their own
+unique strategy for dealing with it. I myself have participated in
+designing some of the most byzantine systems for extracting code
+snippets from source files and then injecting them into the
+documentation. 
+
+You can probably see where I am going with this. Technologies _such as_
+Knitr are the best thing we have to a solution to this problem.
+
+The reason is that Knitr enables you to keep the documentation and the
+source code in the same file. Most other solutions involve with
+extracting documentation from the source code or extracting code
+snippets from the source code and injecting it into the docs. 
+
+Also, everytime that the document is built and published, the embedded
+source code is executed, which is to say it is tested. So you can't
+publish the document without testing the embedded source code.
+
+Now, so far, I have been focusing on Knitr, but really Knitr is just one
+implementations of this idea. Other examples are:
+
+- Bootstrap documentation
+- Jupyter notebooks
+- Storyteller 
+
+Bootstrap is a technology invented by Twitter, but now opensource,
+which makes it easy* to add sophisticated styling to HTML pages.
+Because the documentation for Bootstrap is published in HTML, the
+documentation itself is able to demonstrate the Bootstrap functionality
+being demonstrated.
+
+[Example]
+
+Jupyter notebooks are a technology from the Python world which enables
+you to combine expository text and code in a single interactive document. 
+Jupyter now supports multiple languages.
+
+Storyteller is a technology from Microsoft that enables the creation
+of _executable specifications_. Storyteller solves a different problem
+that Knitr or Jupyter, but it derives from the same idea of an an
+executable document.
 
 
 
