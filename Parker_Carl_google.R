@@ -3,6 +3,7 @@
 # --- Library Dependencies ---
 #
 library( magrittr )
+library( dplyr )
 library( googlesheets )
 
 electoral.votes.df <- read.csv( 
@@ -34,18 +35,19 @@ votes.df$State <- gsub( "\\*", "", votes.df$State )
 
 votes.df <- merge( votes.df, electoral.votes.df )
 
-sum( votes.df[ votes.df$Trump > votes.df$Clinton, ]$Electoral.Votes )
-sum( votes.df[ votes.df$Trump < votes.df$Clinton, ]$Electoral.Votes )
+sum( filter( votes.df, Trump > Clinton )$Electoral.Votes ) 
+sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
 
-with( votes.df, trump.one.pct <- floor( Trump * 0.1 ) )
-with( votes.df, Clinton.retally <- Clinton + trump.one.pct )
-with( votes.df, Trump.retally   <- Trump   - trump.one.pct )
+votes.df$Trump.recount   <- 0
+votes.df$Clinton.recount <- 0
+votes.df$Trump.one.pct <- floor( votes.df$Trump * 0.1 ) 
+with( votes.df, Trump.recount   <- Trump   - Trump.one.pct )
+with( votes.df, Clinton.recount <- Clinton + Trump.one.pct )
 
-with( votes.df, Winner <- ifelse( Trump.retally > Clinton.retally, "Trump", "Clinton" ) )
+with( votes.df, Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" ) )
 
-
-sum( votes.df[ votes.df$Trump.retally > votes.df$Clinton.retally, ]$Electoral.Votes )
-sum( votes.df[ votes.df$Trump.retally < votes.df$Clinton.retally, ]$Electoral.Votes )
+sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
 
 #
 # NYT Election Results
