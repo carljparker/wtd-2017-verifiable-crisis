@@ -30,11 +30,9 @@ noswing.df <- official.gs %>% gs_read( range = "A27:D64", col_names = FALSE ) %>
 
 votes.df <- rbind( swing.df, noswing.df )
 names( votes.df  )<- c( "State", "Clinton", "Trump", "Other" )
-head( votes.df )
 votes.df$State <- gsub( "\\*", "", votes.df$State )
 
 pop.elect.votes.df <- merge( votes.df, electoral.votes.df )
-head( pop.elect.votes.df )
 
 sum( pop.elect.votes.df[ votes.df$Trump > votes.df$Clinton, ]$Electoral.Votes )
 sum( pop.elect.votes.df[ votes.df$Trump < votes.df$Clinton, ]$Electoral.Votes )
