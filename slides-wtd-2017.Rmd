@@ -5,47 +5,133 @@ date: May 14, 2017
 output: ioslides_presentation
 ---
 
-# The Experiment Experiment
+# Part 1: The Reproducibility Crisis in Science
 
-<div class="notes">
-This is my *note*.
+## The Experiment Experiment
 
-- It can contain markdown
-- like this list
 
-</div>
+
 
 ## The Results
 
-- Only 29 of the experiements could be replicated.
+- Only 29 of the experiments could be replicated.
 
-## Fake News
 
-![picture of spaghetti](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
+## Reproducible Research
 
-- Eat eggs
-- Drink coffee
+- Roger Peng and principles of Reproducible Research
+- The paper by itself is only an advertisement
+- Research must be accompanied by code and data
 
-# In the evening
 
-## Dinner
+## Reproducible Research
 
-- Eat spaghetti
-- Drink wine
+An article about computational science in a scientific publication is
+not the scholarship itself, it is merely advertising of the scholarship.
 
-----
+D. Donoho 
+WaveLab and Reproducible Research
+                                                                                   a
+
+## RMarkdown and Knitr
+
+
+## Language Support in Knitr
+
+- R
+- C / C++
+- Python
+- Ruby
+- Perl
+- Bash
+- And others . . .
+
+<div class="notes">
+
+Notably absent: 
+
+- Java 
+- C#
+
+</div>
+
+**Complete list of supported languages**
+
+<https://yihui.name/knitr/demo/engines/>
+
+
+## Examples: Bash 
 
 ```{bash}
 ls
 ```
 
-----
+
+## Similar Technologies
+
+- Jupyter Notebooks
+- Bootstrap
+- Storyteller
+
+<div class="notes">
+
+Nice example of simultaneous invention.
+
+<http://getbootstrap.com/examples/navbar-static-top/#>
+
+</div>
+
+
+## Definition: Epistemology
+
+
+# Part 2: Tech Writing, Code Samples, and Snippets
+
+
+## A long time ago at a company not far away . . . Code Samples
+
+- Intel Tech Support, 1988
+- Hillsboro, OR
+- Email: No
+- Code samples: Yes
+
+
+## Definition: Byzantine
+
+
+# Part 3: Social Discourse, Misinformation, and Fake News
 
 <font color='blue'>"There has been a great deal of hype surrounding
 neural networks, making them seem magical and mysterious. As we make clear in this section, they are just nonlinear statistical models..." (ESL, p.392)</font>
 
----
+![picture of spaghetti](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
 
+
+## Lies, Fake News, and Statistics
+
+
+![](images/kirk-59029681247aa891782881.gif)
+
+
+## Weaponization of Information 
+
+
+
+![](images/2017-03-19-weaponized-lies.png)
+
+## Example: How close was the election really?
+
+![](images/credible-hulk-YxhdDzN__400x400.png)
+
+
+## Get the Electoral Votes 1
+
+![](images/electoral-votes-wikipedia-20170509.png)
+
+Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution) 
+
+
+## Get the Electoral Votes 2
 
 ```{python}
 from bs4 import BeautifulSoup
@@ -74,7 +160,7 @@ soup    = BeautifulSoup( page, "html.parser" )
 # Find the table that shows the electoral votes.
 #
 table   = soup.find("table", { "class" : "wikitable" })
-                     
+
 outfileName = "electoral-college.csv"
 with open( outfileName, 'w' ) as folderOut:
   for row in table.findAll( "tr" ):
@@ -92,7 +178,12 @@ with open( outfileName, 'w' ) as folderOut:
 ```
 
 
-## Going to sleep
+## Definition: Veracity
 
-- Get in bed
-- Count sheep
+![](images/20170331-veracity.png)
+
+
+# Conclusion
+
+
+
