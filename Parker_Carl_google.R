@@ -37,11 +37,12 @@ votes.df <- merge( votes.df, electoral.votes.df )
 sum( votes.df[ votes.df$Trump > votes.df$Clinton, ]$Electoral.Votes )
 sum( votes.df[ votes.df$Trump < votes.df$Clinton, ]$Electoral.Votes )
 
-votes.df$trump.one.pct <- floor( votes.df$Trump * 0.1 )
-votes.df$Clinton.retally <- votes.df$Clinton + votes.df$trump.one.pct
-votes.df$Trump.retally   <- votes.df$Trump   - votes.df$trump.one.pct
+with( votes.df, trump.one.pct <- floor( Trump * 0.1 ) )
+with( votes.df, Clinton.retally <- Clinton + trump.one.pct )
+with( votes.df, Trump.retally   <- Trump   - trump.one.pct )
 
-votes.df$winner.retally  <- ifelse( votes.df$Trump.retally > votes.df$Clinton.retally, "Trump", "Clinton" )
+with( votes.df, Winner <- ifelse( Trump.retally > Clinton.retally, "Trump", "Clinton" ) )
+
 
 sum( votes.df[ votes.df$Trump.retally > votes.df$Clinton.retally, ]$Electoral.Votes )
 sum( votes.df[ votes.df$Trump.retally < votes.df$Clinton.retally, ]$Electoral.Votes )
