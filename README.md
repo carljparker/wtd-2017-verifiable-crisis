@@ -15,6 +15,13 @@ Advance the slides using arrow keys or PgUp/PgDn.
 Clicking on slides in the presenters window will _not_ advance the
 slides in the main window.
 
+---
+Here is the post that describes the issue with state not being saved
+between Python chunks.
+
+<https://support.rstudio.com/hc/en-us/community/posts/222207188-Multiple-Python-chunks-in-RStudio-R-Markdown>
+---
+
 
 --- END ---
 
