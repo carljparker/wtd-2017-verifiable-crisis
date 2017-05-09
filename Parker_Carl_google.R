@@ -32,10 +32,10 @@ votes.df <- rbind( swing.df, noswing.df )
 names( votes.df  )<- c( "State", "Clinton", "Trump", "Other" )
 votes.df$State <- gsub( "\\*", "", votes.df$State )
 
-pop.elect.votes.df <- merge( votes.df, electoral.votes.df )
+votes.df <- merge( votes.df, electoral.votes.df )
 
-sum( pop.elect.votes.df[ votes.df$Trump > votes.df$Clinton, ]$Electoral.Votes )
-sum( pop.elect.votes.df[ votes.df$Trump < votes.df$Clinton, ]$Electoral.Votes )
+sum( votes.df[ votes.df$Trump > votes.df$Clinton, ]$Electoral.Votes )
+sum( votes.df[ votes.df$Trump < votes.df$Clinton, ]$Electoral.Votes )
 
 votes.df$trump.one.pct <- floor( votes.df$Trump * 0.1 )
 votes.df$Clinton.retally <- votes.df$Clinton + votes.df$trump.one.pct
@@ -43,8 +43,8 @@ votes.df$Trump.retally   <- votes.df$Trump   - votes.df$trump.one.pct
 
 votes.df$winner.retally  <- ifelse( votes.df$Trump.retally > votes.df$Clinton.retally, "Trump", "Clinton" )
 
-sum( pop.elect.votes.df[ votes.df$Trump.retally > votes.df$Clinton.retally, ]$Electoral.Votes )
-sum( pop.elect.votes.df[ votes.df$Trump.retally < votes.df$Clinton.retally, ]$Electoral.Votes )
+sum( votes.df[ votes.df$Trump.retally > votes.df$Clinton.retally, ]$Electoral.Votes )
+sum( votes.df[ votes.df$Trump.retally < votes.df$Clinton.retally, ]$Electoral.Votes )
 
 #
 # NYT Election Results
