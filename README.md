@@ -20,7 +20,19 @@ Here is the post that describes the issue with state not being saved
 between Python chunks.
 
 <https://support.rstudio.com/hc/en-us/community/posts/222207188-Multiple-Python-chunks-in-RStudio-R-Markdown>
+
+And this post on Stack Overflow:
+
+Using python together with knitr
+<http://stackoverflow.com/questions/40171949/using-python-together-with-knitr>
+
+which links to the following
+
+knitr - Python engine cache option not working
+<http://stackoverflow.com/questions/30175948/knitr-python-engine-cache-option-not-working>
+
 ---
+
 
 
 --- END ---
