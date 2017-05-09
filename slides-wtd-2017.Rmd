@@ -2,7 +2,10 @@
 title: "The Verifiability Crisis in Science, Tech Writing, and Life"
 author: Carl Parker
 date: May 14, 2017
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
 ---
 
 # Part 1: The Reproducibility Crisis in Science
