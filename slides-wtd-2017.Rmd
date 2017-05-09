@@ -66,18 +66,18 @@ Notably absent:
 ls
 ```
 
-
 ## Similar Technologies
 
-- Jupyter Notebooks
-- Bootstrap
+- [knitpy](https://github.com/janschulz/knitpy/blob/master/README.md) (and [stitch](https://github.com/pystitch/stitch/blob/master/README.rst))
+- Jupyter Notebooks (supports Python, R, and other languages)
+- [Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
 - Storyteller
 
 <div class="notes">
 
-Nice example of simultaneous invention.
+I am demo'ing R because I am most familiar with R.
 
-<http://getbootstrap.com/examples/navbar-static-top/#>
+Nice example of simultaneous invention.
 
 </div>
 
@@ -132,6 +132,8 @@ Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Elector
 
 
 ## Get the Electoral Votes 2
+
+Python code to retrieve electoral votes.
 
 ```{python}
 from bs4 import BeautifulSoup
