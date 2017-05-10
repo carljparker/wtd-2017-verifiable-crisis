@@ -8,8 +8,9 @@ wiki.elect.votes <-  paste(
                             sep = ""
                           )
 
-html.parsed <- read_html( wiki.elect.votes )
-electoral.votes.by.state <- html_nodes( html.parsed, "table.wikitable:nth-child(103)" ) %>% 
+evotes.by.state.li <- read_html( wiki.elect.votes ) %>%
+  html_nodes( "table.wikitable:nth-child(103)" ) %>% 
   html_table()
 
+evotes.by.state.df <- evotes.by.state.li[[1]]
 
