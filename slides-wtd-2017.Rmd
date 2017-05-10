@@ -12,19 +12,30 @@ output:
 
 ## The Experiment Experiment
 
-
+- Attempt to test the veracity of scientific research.
+- One hundred peer-reviewed published research papers.
+- A team of investigators set out to replicate the findings.
 
 
 ## The Results
 
-- Only 29 of the experiments could be replicated.
+- Only <b>29</b> of the experiments could be replicated.
 
 
-## Reproducible Research
+## The Aftermath
 
-- Roger Peng and principles of Reproducible Research
-- The paper by itself is only an advertisement
-- Research must be accompanied by code and data
+- Other investigators conducted similar experiments . . .
+- . . . with similar results. 
+- Feeling assailed, the statistics community responded.
+
+
+## Principles of Reproducible Research
+
+- Roger Peng (Johns Hopkins) and principles of Reproducible Research.\*
+- Research must be accompanied by code and data.
+- The research paper by itself is only an advertisement.
+
+\* Reproducible Research in Computational Science, Science, Dec, 2011
 
 
 ## Reproducible Research
@@ -32,11 +43,19 @@ output:
 An article about computational science in a scientific publication is
 not the scholarship itself, it is merely advertising of the scholarship.
 
-D. Donoho 
-WaveLab and Reproducible Research
-                                                                                   a
+Dave Donoho, Stanford University
+                                                                                   
 
-## RMarkdown and Knitr
+## RMarkdown and Knitr 1
+
+- Needed a way to bring research paper, the code, and the data togeter.
+- RMarkdown: extensions to enable Markdown to embed executable code.
+- Knitr: tool that builds the RMarkdown to various output formats.
+
+
+## RMarkdown and Knitr 2
+
+![](images/knitr-process.png)
 
 
 ## Language Support in Knitr
@@ -85,10 +104,14 @@ Nice example of simultaneous invention.
 </div>
 
 
-## Definition: Epistemology
+## The Takeaway
+
+Code that the document references lives inside the document . . .
+
+. . . and be executable in the context of the document.
 
 
-# Part 2: Tech Writing, Code Samples, and Snippets
+# Part 2: Tech Writing, Reproducibility, and Code
 
 
 ## A long time ago at a company not far away . . . Code Samples
@@ -99,15 +122,21 @@ Nice example of simultaneous invention.
 - Code samples: Yes
 
 
+##  Transitioning the i386 to Protected Mode
+
+![](images/i386.png)
+
+
 ## Definition: Byzantine
-
-
-# Part 3: Social Discourse, Misinformation, and Fake News
 
 <font color='blue'>"There has been a great deal of hype surrounding
 neural networks, making them seem magical and mysterious. As we make clear in this section, they are just nonlinear statistical models..." (ESL, p.392)</font>
 
-![picture of spaghetti](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
+
+# Part 3: Social Discourse, Misinformation, and Fake News
+
+
+![](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
 
 
 ## Lies, Fake News, and Statistics
@@ -116,11 +145,12 @@ neural networks, making them seem magical and mysterious. As we make clear in th
 ![](images/kirk-59029681247aa891782881.gif)
 
 
-## Weaponization of Information 
+---
 
 
-
+<div class="centered">
 ![](images/2017-03-19-weaponized-lies.png)
+</div>
 
 ## Example: How close was the election really?
 
