@@ -16,6 +16,7 @@ Clicking on slides in the presenters window will _not_ advance the
 slides in the main window.
 
 ---
+
 Here is the post that describes the issue with state not being saved
 between Python chunks.
 
