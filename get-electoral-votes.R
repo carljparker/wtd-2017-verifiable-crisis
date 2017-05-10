@@ -9,5 +9,7 @@ wiki.elect.votes <-  paste(
                           )
 
 html.parsed <- read_html( wiki.elect.votes )
-html_nodes( html.parsed, "table.wikitable:nth-child(103)" )
+electoral.votes.by.state <- html_nodes( html.parsed, "table.wikitable:nth-child(103)" ) %>% 
+  html_table()
+
 
