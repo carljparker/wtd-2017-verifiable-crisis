@@ -18,6 +18,5 @@ names( evotes.by.state.df ) <- c( "EV", "State" )
 evotes.by.state.df <- evotes.by.state.df[ -( 20 ), ] 
 evotes.by.state.df$EV <- strsplit( evotes.by.state.df$EV, " " )
 
-lapply( evotes.by.state.df$EV, function( li ) as.numeric( unlist( li )[ 1 ] ) )
-evotes.by.state.df$EV <- as.numeric( unlist( evotes.by.state.df$EV )[ 1 ] )
+evotes.by.state.df$EV <- unlist( lapply( evotes.by.state.df$EV, function( li ) as.numeric( unlist( li )[ 1 ] ) ) )
 
