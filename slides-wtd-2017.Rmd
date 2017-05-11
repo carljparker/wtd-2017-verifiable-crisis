@@ -257,11 +257,10 @@ Nice example of simultaneous invention.
 Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution) 
 
 
-## Get the Electoral Votes 2
+## Get the Electoral Votes 2 {.codefont-small}
 
-```{r warning=FALSE}
+```{r warning=FALSE, message=FALSE}
 library( rvest )
-library( knitr )
 
 wiki.elect.votes <-  paste( 
                             "https://en.wikipedia.org/wiki/",
