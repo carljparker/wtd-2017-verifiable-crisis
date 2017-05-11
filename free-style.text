@@ -97,7 +97,6 @@ for statistical analysis.
 
 Here is a Markdown document. 
 
-
 Here is some R program code that calculates the Fibonacci sequence.
 
 And here is some R code embedded in a Markdown document. 
@@ -121,16 +120,29 @@ The operative word here is _could_, but what if they actually wanted to?
 The published document, for simplicity, doesn't show all the source code
 and doesn't contain all the data. 
 
+---
+
+Knitr Output
+
+RMarkdown leverages Pandoc to process the markdown component of the
+source document. So RMarkdown supports any output format supported by
+Pandoc.
+
+And I have kind of a funny story about that . . . at HBO, the technical
+writing team is part of the larger Design organization and I report to
+the VP of design, Ryan. Well, Ryan is a Keynote afficianado and was
+somewhat aghast at my slides . . . I am not a designer.
+
+
 [Reproducible workflow]
 
 This is where GitHub comes in. 
 
 (This is going to get a little geeky, but please bear with me.)
 
-The RMarkdown source for the document is
-stored on GitHub along with the data that supports the research. The
-document links to the GitHub repository that contains the source and
-data.
+The RMarkdown source for the document is stored on GitHub along with the
+data that supports the research. The document links to the GitHub
+repository that contains the source and data.
 
 [Make]
 GitHub solves the problem of making the code and data available. But
@@ -151,17 +163,6 @@ document, the mere fact that they could (and that the authors had to in
 order to publish) creates verifiability.
 
 
-RMarkdown Output
-
-RMarkdown leverages Pandoc to process the markdown component of the
-source document. So RMarkdown supports any output format supported by
-Pandoc.
-
-And I have kind of a funny story about that . . . at HBO, the technical
-writing team is part of the larger Design organization and I report to
-the VP of design, Ryan. Well, Ryan is a Keynote afficianado and was
-somewhat aghast at my slides . . . I am not a designer.
-
 Reproducible Research and RMarkdown has taken hold in the Data Science
 and Statistics communities, but it hasn't been all Rainbows and
 Unicorns. In <MONTH>, the New England Journal of Medicine published an
@@ -172,14 +173,6 @@ the New England Journal will not be accompanied by data.
 
 So we will have to see how this all unfolds over the next few years.
 
-Technical Writing
-
-When Yuhui, designed knitr, he foresaw that researchers might want to
-use programming languages other than R for their analysis. So it made
-the language processor extensible . . . and then proceeded to extend it.
-
-Here is a list of the languages currently supported in RMarkdown. So,
-here is fibonnaci written in Python.
 
 Okay, so we've briefed ourselves on the reproducibility crisis and the
 methods that the data science and statistics communities have devised to
@@ -229,6 +222,16 @@ snippets from the source code and injecting it into the docs.
 Also, everytime that the document is built and published, the embedded
 source code is executed, which is to say it is tested. So you can't
 publish the document without testing the embedded source code.
+
+
+Language Support
+
+When Yuhui, designed knitr, he foresaw that researchers might want to
+use programming languages other than R for their analysis. So it made
+the language processor extensible . . . and then proceeded to extend it.
+
+Here is a list of the languages currently supported in RMarkdown. So,
+here is fibonnaci written in Python.
 
 [Code Snippets]
 
@@ -285,8 +288,9 @@ And sadly, the issues with reproducibility in the scientific community
 have contributed to the problem. 
 
 But I'd like to suggest that the same tools that have been invented to
-counter the reproducibility crisis can be brought to bear on the fake
-news crisis.
+counter the reproducibility crisis can--and eventually will be--brought
+to bear on the fake news crisis.
+
 
 I'm sure that many of you are aware that Hillary Clinton won a majority
 of the popular vote. And obviously, President Trump won a majority of
