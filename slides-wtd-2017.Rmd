@@ -4,8 +4,8 @@ author: Carl Parker
 date: May 14, 2017
 output: 
   ioslides_presentation:
-    widescreen: true
     css: styles.css
+    widescreen: true
 ---
 
 # Part 1: The Reproducibility Crisis in Science
@@ -22,7 +22,9 @@ output:
 - Only <b>29</b> of the experiments could be replicated.
 
 
-## The Aftermath
+## The Aftermath {.color-text}
+
+Here is some body text.
 
 - Other investigators conducted similar experiments . . .
 - . . . with similar results. 
@@ -65,7 +67,7 @@ Dave Donoho, Stanford University
 - Make
 
 
-## Example: Python
+## Example: Python {.codefont}
 
 ```{python}
 import sys;
