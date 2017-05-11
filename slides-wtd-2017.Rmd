@@ -8,34 +8,56 @@ output:
     widescreen: true
 ---
 
-# Part 1: The Reproducibility Crisis in Science
+# Part 1: The Replication Crisis in Science
 
 ## The Experiment Experiment
 
-- Attempt to test the veracity of scientific research.
-- One hundred peer-reviewed published research papers.
-- A team of investigators set out to replicate the findings.
+A team of investigators set out to replicate the findings from
+<b>hundred</b> peer-reviewed published research papers.
+
+Only <b>29</b> of the experiments could be replicated.
+
+## Further Studies...Similar Results
+
+According to a 2016 poll of 1,500 scientists reported in the journal
+Nature, 70% of them had failed to reproduce at least one other
+scientist's experiment and 50% had failed to reproduce one of their own
+experiments. 
+
+chemistry: 90% (60%),
+biology: 80% (60%),
+physics and engineering: 70% (50%),
+medicine: 70% (60%),
+Earth and environment science: 60% (40%).
 
 
-## The Results
+## Replication Crisis
 
-- Only <b>29</b> of the experiments could be replicated.
+Replication crisis
+From Wikipedia, the free encyclopedia
 
-
-## The Aftermath {.colortext}
-
-Here is some body text.
-
-- Other investigators conducted similar experiments . . .
-- . . . with similar results. 
-- Feeling assailed, the statistics community responded.
+The replication crisis (or replicability crisis) refers to a
+methodological crisis in science in which scientists have found that the
+results of many scientific experiments are difficult or impossible to
+replicate on subsequent investigation, either by independent researchers
+or by the original researchers themselves.
 
 
-## Principles of Reproducible Research
+## The Aftermath: Reproducible Research
 
-- Roger Peng (Johns Hopkins) and principles of Reproducible Research.\*
-- Research must be accompanied by code and data.
-- The research paper by itself is only an advertisement.
+Feeling assailed, the statistics community responded.
+
+Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
+
+- Replication, the ability to re-enact the experiment was too high a
+  bar.
+
+- Instead, Reproducibility, the ability to reach the same conclusions
+  given the same data and computational software.
+
+- Reproduciblity requires that any published research make available
+  both data that was collected and the code that processed the data.
+
 
 \* Reproducible Research in Computational Science, Science, Dec, 2011
 
@@ -43,16 +65,30 @@ Here is some body text.
 ## Reproducible Research
 
 An article about computational science in a scientific publication is
-not the scholarship itself, it is merely advertising of the scholarship.
+not the scholarship itself, it is merely advertising the scholarship.
 
 Dave Donoho, Stanford University
                                                                                    
 
+## Integrating the Code with the Writing
+
+One of the barriers to reproducible research is that the code used to
+produce the research is usually maintained separately from the research
+paper itself.
+
+The paper is published, but the code becomes . . . misplaced.
+
+The solution was to find a way to _keep the research paper and the code
+together_.
+
+
 ## RMarkdown and Knitr 1
 
-- Needed a way to bring the research paper, code, and data together.
-- RMarkdown: extensions to enable Markdown to embed executable code.
-- Knitr: tool that builds the RMarkdown to various output formats.
+RMarkdown
+Extensions to enable Markdown to embed executable code.
+
+Knitr
+Tool that builds the RMarkdown to various output formats.
 
 
 ## RMarkdown and Knitr 2
@@ -65,6 +101,54 @@ Dave Donoho, Stanford University
 - RMarkdown, Knitr
 - GitHub
 - Make
+
+
+
+
+## The Takeaway
+
+Code that the document references lives inside the document . . .
+
+. . . and is executable in the context of the document.
+
+
+# Part 2: Tech Writing, Reproducibility, and Code
+
+---
+
+<div class = "center" >
+Writing About Software
+vs
+Enabling Reproducible Experiences
+</div>
+
+
+## A long time ago at a company not far away . . . Code Samples
+
+- Intel Tech Support
+- Hillsboro, OR
+- Year: 1988
+- Email: No
+- Code samples: Yes
+
+
+##  Transitioning the i386 to Protected Mode
+
+![](images/i386.png)
+
+
+## Fast Forward 
+
+- Microsoft
+- Redmond, WA
+- Year: 2008
+- Email: Yes
+- Code samples: Yes
+
+
+## Definition: Byzantine
+
+![](images/byzantine-defn.png)
 
 
 ## Example: Python {.codefont}
@@ -118,53 +202,6 @@ I am demo'ing R because I am most familiar with R.
 Nice example of simultaneous invention.
 
 </div>
-
-
-
-## The Takeaway
-
-Code that the document references lives inside the document . . .
-
-. . . and is executable in the context of the document.
-
-
-# Part 2: Tech Writing, Reproducibility, and Code
-
----
-
-<div class = "center" >
-Writing About Software
-vs
-Enabling Reproducible Experiences
-</div>
-
-
-## A long time ago at a company not far away . . . Code Samples
-
-- Intel Tech Support
-- Hillsboro, OR
-- Year: 1988
-- Email: No
-- Code samples: Yes
-
-
-##  Transitioning the i386 to Protected Mode
-
-![](images/i386.png)
-
-
-## Fast Forward 
-
-- Microsoft
-- Redmond, WA
-- Year: 2008
-- Email: Yes
-- Code samples: Yes
-
-
-## Definition: Byzantine
-
-![](images/byzantine-defn.png)
 
 
 # Part 3: Social Discourse, Misinformation, and Fake News
