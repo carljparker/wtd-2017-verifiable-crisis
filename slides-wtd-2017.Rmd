@@ -270,13 +270,13 @@ wiki.elect.votes <-  paste(
                             sep = ""
                           )
 
-evotes.wiki.li <- read_html( wiki.elect.votes )  %>%
+evotes.wiki.df <- read_html( wiki.elect.votes )  %>%
   html_nodes( "table.wikitable:nth-child(103)" ) %>% 
   html_table()
 ```
 
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
-evotes.wiki.df <- evotes.wiki.li[[1]]
+evotes.wiki.df <- evotes.wiki.df[[1]]
 evotes.wiki.df <- evotes.wiki.df[ -( 20 ), ] 
 names( evotes.wiki.df ) <- c( "EV", "States" )
 ```
