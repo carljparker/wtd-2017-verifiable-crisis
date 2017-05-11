@@ -17,7 +17,8 @@ A team of investigators set out to replicate the findings from
 
 Only <b>29</b> of the experiments could be replicated.
 
-## Further Studies...Similar Results
+
+## More Studies...Similar Results
 
 According to a 2016 poll of 1,500 scientists reported in the journal
 Nature, 70% of them had failed to reproduce at least one other
@@ -259,7 +260,7 @@ Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Elector
 
 ## Get the Electoral Votes 2 {.codefont-small}
 
-```{r warning=FALSE, message=FALSE}
+```{r warning = FALSE, message = FALSE}
 library( rvest )
 
 wiki.elect.votes <-  paste( 
@@ -269,15 +270,18 @@ wiki.elect.votes <-  paste(
                             sep = ""
                           )
 
-evotes.wiki.li <- read_html( wiki.elect.votes ) %>%
-  html_nodes( "table.wikitable:nth-child(103)" )    %>% 
+evotes.wiki.li <- read_html( wiki.elect.votes )  %>%
+  html_nodes( "table.wikitable:nth-child(103)" ) %>% 
   html_table()
+```
 
+```{r warning = FALSE, message = FALSE, echo = FALSE}
 evotes.wiki.df <- evotes.wiki.li[[1]]
 evotes.wiki.df <- evotes.wiki.df[ -( 20 ), ] 
-
 names( evotes.wiki.df ) <- c( "EV", "States" )
+```
 
+```{r warning = FALSE, message = FALSE}
 evotes.wiki.df$EV <- strsplit( evotes.wiki.df$EV, " " )
 
 evotes.wiki.df$EV <- unlist( lapply( evotes.wiki.df$EV, function( li ) as.numeric( unlist( li )[ 1 ] ) ) )
