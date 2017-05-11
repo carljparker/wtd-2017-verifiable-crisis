@@ -22,7 +22,7 @@ output:
 - Only <b>29</b> of the experiments could be replicated.
 
 
-## The Aftermath {.color-text}
+## The Aftermath {.colortext}
 
 Here is some body text.
 
