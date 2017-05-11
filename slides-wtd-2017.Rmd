@@ -150,7 +150,7 @@ Code that the document references lives inside the document . . .
 - Providing the customer with enough information to reproduce the result.
 
 
-## Reframing the Objective {.enbiggen}
+## Reframing the Objective {.embiggen .embolden}
 
 <div class = "centered" >
 <p>Writing About Software</p>

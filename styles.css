@@ -1,6 +1,9 @@
-.enbiggen p {
+.embiggen p {
   font-size: 1.5em
+}
 
+.embolden p {
+  font-weight: bold
 }
 
 .codefont pre {
