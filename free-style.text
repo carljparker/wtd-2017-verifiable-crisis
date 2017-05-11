@@ -2,15 +2,17 @@ https://twitter.com/scribblingfox/status/851289517872922624
 
 
 I'm going to speak with your today about the verifibility crisis in
-science tech writing and life. That is a long title; it barely fits on
-the slide...I'm going to suggest that in recent years, we have
-experienced issues in each of these domains and that these issues have
-commonality that makes them yield to similar solutions.
+science, tech writing and life. 
 
-From a technical writing standpoint, this talk is addressed mostly
-toward writers who write for a developer audience. However, the impact
-of what I discuss on our social experience should be relevant to
-everyone here.
+So what does that mean?
+
+I'm going to suggest that in recent years, we have experienced
+issues with our ability to verify information in each of these domains.
+
+From a tactical standpoint, this talk is addressed primarily toward
+writers who write for a developer audience. But from philosophical
+standpoint, what I discuss on our social experience should be relevant
+to most of you.
 
 Our story begins in XXXX with The Experiment Experiment. This was a
 project initiated by XXXX in which they identified 100 published
@@ -18,25 +20,30 @@ peer-reviewed research papers. For each paper, a team of investigators
 studied the methodology described in the paper and then attempted to
 recreate the results that the authors of the paper obtained.
 
-for example, ....
+What the investigators found is that they were able to replicate the
+original research from only 29 out of 100 papers. So 71% of the research
+could not be replicated.
 
-what investigators found is that in 71 out of 100 papers, the results
-obtained by the original researchers could not be duplicated. That's
-71%.
+This experiment go some press and other people did similar
+investigations and got similar results.
+
+Here are some numbers from Wikipedia.
 
 Now, before we jump to conclusions, we don't know precisely why the
 results of these studies couldn't be duplicated. It could be that the
 particular conditions of the original study couldn't be recreated, or
-maybe the paper didn't provide enough information for how to duplicated
-the study, or perhaps the paper misrepresented the results of the study.
-We really don't know, but irrespective of the reasons, the inability to
-recreate--or verify--the published results of scientific research
-potentially creates a lack of confidence.
+maybe the paper didn't provide enough information to enable the the
+experiment to be duplicated, or perhaps the paper misrepresented the
+results of the study.  We really don't know, but irrespective of the
+reasons, this inability to replicate--or verify--the published results
+of scientific research potentially creates a lack of confidence.
 
 At this point, I want to introduce a word: veracity. One of the great
 things about speaking at a technical writing conference is that I don't
 generally have to be concerned that my audience won't understand a given
 word. That said, here is the definition.
+
+DEFN: Epistemology
 
 DEFN: Veracity
 
@@ -47,8 +54,8 @@ I'm proposing that verifiability ensures veracity.
 
 [ logic diagram with implies ]
 
-a fine point here, verifiability doesn't mean that you have to do the
-work of verifying the information, it means that you _could_. 
+A fine point here, verifiability doesn't mean that you actually have to
+do the work of verifying the information, it means that you _could_. 
 
 Back to our story...
 
@@ -63,7 +70,7 @@ So in response, Roger Peng, a professor in the department of
 biostatistics at Johns-Hopkins developed a set of guidelines for
 Reproducible Research.
 
-Reproducible research doesn't require that a study be recreatable. Peng
+Reproducible research doesn't require that a study be replicable. Peng
 felt that, as a standard, that was too high a bar. Instead Reproducible
 Research says that a published paper must also make available the raw
 data that was collected and the code that was used to analyze the data.
@@ -83,26 +90,13 @@ by John Gruber of Daring Fireball.
 
 Provide links to gruber and DF twitter feeds.
 
-Here is a Markdown document. 
-
-Here is what that looks like when published.
-
-221:The Credible Hulk
-222-<https://twitter.com/BigSpiderBack/status/847901561309220864>
-
-Also this:
-
-<https://www.google.com/search?q=credible+hulk&ie=utf-8&oe=utf-8>
-
-And this looks interesting too:
-
-<https://mrcredible.org/>
-
-
 What is R?
 
 R is an open-source programming language that is designed specifically
 for statistical analysis.
+
+Here is a Markdown document. 
+
 
 Here is some R program code that calculates the Fibonacci sequence.
 
