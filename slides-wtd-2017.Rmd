@@ -5,7 +5,7 @@ date: May 14, 2017
 output: 
   ioslides_presentation:
     widescreen: true
-    smaller: true
+    css: styles.css
 ---
 
 # Part 1: The Reproducibility Crisis in Science
@@ -48,7 +48,7 @@ Dave Donoho, Stanford University
 
 ## RMarkdown and Knitr 1
 
-- Needed a way to bring research paper, the code, and the data togeter.
+- Needed a way to bring the research paper, code, and data together.
 - RMarkdown: extensions to enable Markdown to embed executable code.
 - Knitr: tool that builds the RMarkdown to various output formats.
 
@@ -56,6 +56,26 @@ Dave Donoho, Stanford University
 ## RMarkdown and Knitr 2
 
 ![](images/knitr-process.png)
+
+
+## Reproducibility Ecosystem
+
+- RMarkdown, Knitr
+- GitHub
+- Make
+
+
+## Example: Python
+
+```{python}
+import sys;
+target_file = open( "number.txt" );
+
+n = 5
+
+for i in range( n ):
+    print( i**2 )
+```
 
 
 ## Language Support in Knitr
@@ -79,14 +99,8 @@ Notably absent:
 
 **Complete list of supported languages**
 
-<https://yihui.name/knitr/demo/engines/>
+<http://rmarkdown.rstudio.com/authoring_knitr_engines.html#rcpp>
 
-
-## Examples: Bash 
-
-```{bash}
-ls
-```
 
 ## Similar Technologies
 
@@ -104,20 +118,30 @@ Nice example of simultaneous invention.
 </div>
 
 
+
 ## The Takeaway
 
 Code that the document references lives inside the document . . .
 
-. . . and be executable in the context of the document.
+. . . and is executable in the context of the document.
 
 
 # Part 2: Tech Writing, Reproducibility, and Code
 
+---
+
+<div class = "center" >
+Writing About Software
+vs
+Enabling Reproducible Experiences
+</div>
+
 
 ## A long time ago at a company not far away . . . Code Samples
 
-- Intel Tech Support, 1988
+- Intel Tech Support
 - Hillsboro, OR
+- Year: 1988
 - Email: No
 - Code samples: Yes
 
@@ -127,16 +151,22 @@ Code that the document references lives inside the document . . .
 ![](images/i386.png)
 
 
+## Fast Forward 
+
+- Microsoft
+- Redmond, WA
+- Year: 2008
+- Email: Yes
+- Code samples: Yes
+
+
 ## Definition: Byzantine
 
-<font color='blue'>"There has been a great deal of hype surrounding
-neural networks, making them seem magical and mysterious. As we make clear in this section, they are just nonlinear statistical models..." (ESL, p.392)</font>
+![](images/byzantine-defn.png)
 
 
 # Part 3: Social Discourse, Misinformation, and Fake News
 
-
-![](~/archive/business/work/doc/wtd/2017/59029681247aa891782881.gif)
 
 
 ## Lies, Fake News, and Statistics
@@ -149,7 +179,7 @@ neural networks, making them seem magical and mysterious. As we make clear in th
 
 
 <div class="centered">
-![](images/2017-03-19-weaponized-lies.png)
+![](images/2017-03-19-weaponized-lies-resized.png)
 </div>
 
 ## Example: How close was the election really?
@@ -165,52 +195,6 @@ Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Elector
 
 
 ## Get the Electoral Votes 2
-
-Python code to retrieve electoral votes.
-
-```{python}
-from bs4 import BeautifulSoup
-import urllib2
-import re
- 
-#
-# Need the following line to prevent 403 error on Wikipedia.
-#
-header  = {'User-Agent': 'Mozilla/5.0'} 
-
-#
-# Wikipedia page about the electoral college.
-#
-wiki    = "https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution"
-
-request = urllib2.Request( wiki, headers = header )
-page    = urllib2.urlopen( request )
-
-#
-# Parse the HTML
-#
-soup    = BeautifulSoup( page, "html.parser" )
-
-#
-# Find the table that shows the electoral votes.
-#
-table   = soup.find("table", { "class" : "wikitable" })
-
-outfileName = "electoral-college.csv"
-with open( outfileName, 'w' ) as folderOut:
-  for row in table.findAll( "tr" ):
-    cells = row.findAll( "td" )
-    if 2 == len( cells ):
-      if re.search( "=", cells[ 0 ].find( text = True ) ):
-        continue
-      for string in cells[ 1 ].strings: 
-        states = string.split( "," )
-        for state in states:
-          state = state.strip()
-          if len( state ) != 0:
-            folderOut.write( cells[ 0 ].find( text = True ) + ", " )
-            folderOut.write( state + "\n" )
-```
 
 
 ## Definition: Veracity
