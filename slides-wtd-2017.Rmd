@@ -260,16 +260,19 @@ Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Elector
 
 ## Get the Electoral Votes 2 {.codefont-small}
 
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE, message = FALSE, echo = FALSE}
 library( rvest )
+```
 
-wiki.elect.votes <- paste( 
-                           "https://en.wikipedia.org/wiki/",
-                           "Electoral_College_(United_States)",
-                           "#Current_electoral_vote_distribution",
-                           sep = ""
-                         )
+Get the electoral votes from Wikipedia.
 
+```{r warning = FALSE, message = FALSE}
+wiki.elect.votes <- c( 
+  "https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution"
+)
+```
+Convert the HTML table into an R dataframe.
+```{r warning = FALSE, message = FALSE}
 evotes.wiki.df <- read_html( wiki.elect.votes )  %>%
   html_nodes( "table.wikitable:nth-child(103)" ) %>% 
   html_table()
@@ -278,22 +281,26 @@ evotes.wiki.df <- read_html( wiki.elect.votes )  %>%
 evotes.wiki.df <- evotes.wiki.df[[1]]
 evotes.wiki.df <- evotes.wiki.df[ -( 20 ), ] 
 names( evotes.wiki.df ) <- c( "EV", "States" )
-
 evotes.wiki.df$EV <- strsplit( evotes.wiki.df$EV, " " )
 evotes.wiki.df$EV <- unlist( lapply( evotes.wiki.df$EV, function( li ) as.numeric( unlist( li )[ 1 ] ) ) )
 evotes.df <- data.frame()
 ```
+Refactor the data into one row per state.
 ```{r warning = FALSE, message = FALSE}
-
 for( row.idx in 1:nrow( evotes.wiki.df ) ) {
   states.vec <- trimws( unlist( strsplit( evotes.wiki.df[ row.idx, 2 ], "," ) ) )
   evotes.df  <- rbind( evotes.df, cbind( states.vec, evotes.wiki.df[ row.idx, 1] ) )
 }
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
-names( evotes.df ) <- c( "State", "Electoral.Votes" )
+names( evotes.df ) <- c( "State", "Electoral Votes" )
 ```
+
+## Get the Electoral Votes 3 {.codefont-small}
+
+Display the first few rows of the data.
+
 ```{r warning = FALSE, message = FALSE}
-knitr::kable( head( evotes.df ) )
+knitr::kable( head( evotes.df, 3 ) )
 ```
 
 
