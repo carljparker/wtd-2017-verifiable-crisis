@@ -6,11 +6,18 @@
   font-weight: bold
 }
 
-.codefont pre {
+.codefont-big pre {
     font-size: 1.5;
     font-weight: bold;
     color: blue
 }
+
+.codefont-small pre {
+    font-size: .75;
+    font-weight: bold;
+    color: blue
+}
+
 
 .colortext p {
   color: blue
