@@ -33,14 +33,14 @@ Earth and environment science: 60% (40%).
 
 ## Replication Crisis
 
-Replication crisis
-From Wikipedia, the free encyclopedia
-
-The replication crisis (or replicability crisis) refers to a
+The <b>replication crisis</b> (or replicability crisis) refers to a
 methodological crisis in science in which scientists have found that the
 results of many scientific experiments are difficult or impossible to
 replicate on subsequent investigation, either by independent researchers
-or by the original researchers themselves.
+or _by the original researchers themselves_.
+
+From Wikipedia, the free encyclopedia
+<https://en.wikipedia.org/wiki/Replication_crisis#Marketing>
 
 
 ## The Aftermath: Reproducible Research
@@ -114,14 +114,6 @@ Code that the document references lives inside the document . . .
 
 # Part 2: Tech Writing, Reproducibility, and Code
 
----
-
-<div class = "center" >
-Writing About Software
-vs
-Enabling Reproducible Experiences
-</div>
-
 
 ## A long time ago at a company not far away . . . Code Samples
 
@@ -143,7 +135,7 @@ Enabling Reproducible Experiences
 - Redmond, WA
 - Year: 2008
 - Email: Yes
-- Code samples: Yes
+- Code samples: Inevitable
 
 
 ## Definition: Byzantine
@@ -151,18 +143,40 @@ Enabling Reproducible Experiences
 ![](images/byzantine-defn.png)
 
 
+## Issues with Keeping Codes and Docs Separate
+
+- Verifying that the code snippets in the docs work
+- Keeping the code snippets in the docs synch'd with the actual code
+- Providing the customer with enough information to reproduce the result.
+
+
+## Reframing the Objective {.enbiggen}
+
+<div class = "centered" >
+<p>Writing About Software</p>
+<p>vs</p>
+<p>Enabling Reproducible Experiences</p>
+</div>
+
+
 ## Example: Python {.codefont}
 
 ```{python}
-import sys;
-target_file = open( "number.txt" );
-
 n = 5
 
-for i in range( n ):
-    print( i**2 )
+for i in range( 1, n ):
+    print( i ** 2 )
 ```
 
+## Example: R {.codefont}
+
+```{r}
+n <- 5
+
+for( i in 1:n ) {
+    print( i ^ 2 )
+}
+```
 
 ## Language Support in Knitr
 
@@ -191,9 +205,14 @@ Notably absent:
 ## Similar Technologies
 
 - [knitpy](https://github.com/janschulz/knitpy/blob/master/README.md) (and [stitch](https://github.com/pystitch/stitch/blob/master/README.rst))
-- Jupyter Notebooks (supports Python, R, and other languages)
+  - Similar to Knitr, but with enhanced support for Python.
+- Jupyter Notebooks 
+  - Interactive code mixed with expository text.
+  - Supports Python, R, and other languages.
 - [Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
+  - The HTML documentation for Bootstrap uses Bootstrap for styling.
 - Storyteller
+  - Executable Specifications (Microsoft).
 
 <div class="notes">
 
@@ -211,13 +230,18 @@ Nice example of simultaneous invention.
 ## Lies, Fake News, and Statistics
 
 
+
+![](images/20170331-veracity.png)
+
+
+---
+
 ![](images/kirk-59029681247aa891782881.gif)
 
 
 ---
 
-
-<div class="centered">
+<div class = "centered">
 ![](images/2017-03-19-weaponized-lies-resized.png)
 </div>
 
@@ -236,9 +260,10 @@ Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Elector
 ## Get the Electoral Votes 2
 
 
-## Definition: Veracity
+## Get the Popular Vote  1
 
-![](images/20170331-veracity.png)
+
+## Get the Popular Vote  2
 
 
 # Conclusion
