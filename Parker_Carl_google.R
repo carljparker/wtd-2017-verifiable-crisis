@@ -38,13 +38,19 @@ votes.df <- merge( votes.df, electoral.votes.df )
 sum( filter( votes.df, Trump > Clinton )$Electoral.Votes ) 
 sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
 
-votes.df$Trump.recount   <- 0
-votes.df$Clinton.recount <- 0
-votes.df$Trump.one.pct <- floor( votes.df$Trump * 0.1 ) 
-with( votes.df, Trump.recount   <- Trump   - Trump.one.pct )
-with( votes.df, Clinton.recount <- Clinton + Trump.one.pct )
+attach( votes.df )
 
-with( votes.df, Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" ) )
+Trump.recount   <- 0
+Clinton.recount <- 0
+
+Trump.one.pct <- floor( Trump * 0.1 ) 
+
+votes.df$Trump.recount   <- Trump   - Trump.one.pct 
+votes.df$Clinton.recount <- Clinton + Trump.one.pct 
+
+Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" ) 
+
+detach( votes.df )
 
 sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
 sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
