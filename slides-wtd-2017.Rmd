@@ -59,6 +59,8 @@ From Wikipedia, the free encyclopedia
 
 ## Reproducible Research 1
 
+![](images/peng-roger-linkedin.png)
+
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
 - <i>Replication</i>, the ability to re-enact the experiment was too
@@ -82,7 +84,7 @@ not the scholarship itself, it is merely advertising the scholarship.
 Dave Donoho, Stanford University
                                                                                    
 
-## Integrating the Code with the Writing
+## Enabling Reproducible Research
 
 One of the barriers to reproducible research is that the code used to
 produce the research is usually maintained separately from the research
@@ -96,6 +98,7 @@ together_.
 
 ## RMarkdown and Knitr 1
 
+
 <b>RMarkdown</b>
 
 Extensions to enable Markdown to embed executable code.
@@ -104,6 +107,7 @@ Extensions to enable Markdown to embed executable code.
 
 Tool that builds the RMarkdown to various output formats.
 
+![](images/yihui-github.png)
 
 ## RMarkdown and Knitr 2
 
