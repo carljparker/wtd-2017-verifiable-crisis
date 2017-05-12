@@ -31,6 +31,7 @@ NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
 Only <b>39</b> of the experiments could be replicated.
 
 
+<!--
 ## More Studies...Similar Results
 
 According to a 2016 poll of 1,500 scientists reported in the journal
@@ -43,6 +44,7 @@ biology                        |  80% (60%)
 physics and engineering        |  70% (50%)
 medicine                       |  70% (60%)
 Earth and environment science  |  60% (40%)
+-->
 
 
 ## Replication Crisis
@@ -59,7 +61,13 @@ From Wikipedia, the free encyclopedia
 
 ## Reproducible Research 1
 
-![](images/peng-roger-linkedin.png)
+<!--
+
+<div class = "columns-2">
+![](images/peng-roger-linkedin.jpeg)
+
+-->
+
 
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
@@ -99,15 +107,13 @@ together_.
 ## RMarkdown and Knitr 1
 
 
-<b>RMarkdown</b>
-
+<b>RMarkdown</b></br>
 Extensions to enable Markdown to embed executable code.
 
-<b>Knitr</b>
 
+<b>Knitr</b></br>
 Tool that builds the RMarkdown to various output formats.
 
-![](images/yihui-github.png)
 
 ## RMarkdown and Knitr 2
 
@@ -116,9 +122,9 @@ Tool that builds the RMarkdown to various output formats.
 
 ## Reproducibility Ecosystem
 
-- RMarkdown, Knitr,w
+- RMarkdown, 
+- Knitr
 - GitHub
-- Make
 
 
 ## The Takeaway
@@ -144,26 +150,19 @@ executed when the document is built.
 ![](images/i386.png)
 
 
-## Fast Forward 
-
-- Microsoft
-- Redmond, WA
-- Year: 2008
-- Email: Yes
-- Code samples: Inevitably
-
-
 ## Definition: Byzantine
 
 ![](images/byzantine-defn.png)
 
 
-## Issues with Keeping Codes and Docs Separate
+## Keeping Docs and Sample Code Separate
 
-- Verifying that the code snippets in the docs work
-- Keeping the code snippets in the docs synch'd with the actual code
+- Verifying that the code snippets in the docs work.
+- Keeping the code snippets in the docs synch'd with the actual code.
 - Providing the customer with enough information to reproduce the result.
 
+
+<!--
 
 ## {.embiggen .embolden .vertical}
 
@@ -172,6 +171,8 @@ executed when the document is built.
 <p>vs</p>
 <p>Enabling Reproducible Experiences</p>
 </div>
+
+-->
 
 
 ## Example: Python {.codefont}
@@ -217,17 +218,26 @@ Notably absent:
 <http://rmarkdown.rstudio.com/authoring_knitr_engines.html#rcpp>
 
 
-## Similar Technologies
+## Similar Technologies: Knitpy
 
 - [knitpy](https://github.com/janschulz/knitpy/blob/master/README.md) (and [stitch](https://github.com/pystitch/stitch/blob/master/README.rst))
-  - Similar to Knitr, but with enhanced support for Python.
-- Jupyter Notebooks 
+- Similar to Knitr, but with enhanced support for Python.
+
+
+## Similar Technologies: Jupyter Notebooks
+
   - Interactive code mixed with expository text.
   - Supports Python, R, and other languages.
+
+## Similar Technologies: Bootstrap
+
 - [Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
-  - The HTML documentation for Bootstrap uses Bootstrap for styling.
+- The HTML documentation for Bootstrap uses Bootstrap for styling.
+
+<!--
 - Storyteller
-  - Executable Specifications (Microsoft).
+- Executable Specifications (Microsoft).
+-->
 
 <div class="notes">
 
@@ -240,39 +250,49 @@ Nice example of simultaneous invention.
 
 # Part 3: Social Discourse, Misinformation, and Fake News
 
-
-
 ## Lies, Fake News, and Statistics
 
-
-
-![](images/20170331-veracity.png)
-
-
----
-
-![](images/kirk-59029681247aa891782881.gif)
-
-
----
+## Lies, Fake News, and Statistics
 
 <div class = "centered">
 ![](images/2017-03-19-weaponized-lies-resized.png)
 </div>
 
+
+<!--
+![](images/20170331-veracity.png)
+-->
+
+
+## Lies, Fake News, and Statistics
+
+![](images/kirk-59029681247aa891782881.gif)
+
+
+## Fake News vs Verifiable News
+
+
 ## Example: How close was the election really?
 
+What if 1% of those who votes for Donald Trump--on a state-by-state
+basis had voted for Hillary Clinton instead?
+
+We have all the information we need to answer the question and publish
+the result.
+
+<!--
 ![](images/credible-hulk-YxhdDzN__400x400.png)
+-->
 
 
-## Get the Electoral Votes 1
+## Get the Electoral Votes 
 
 ![](images/electoral-votes-wikipedia-20170509.png)
 
 Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution) 
 
 
-## Get the Electoral Votes 2 {.codefont-small}
+## Get the Electoral Votes  {.codefont-small}
 
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
 library( rvest )
@@ -299,17 +319,15 @@ evotes.wiki.df$EV <- strsplit( evotes.wiki.df$EV, " " )
 evotes.wiki.df$EV <- unlist( lapply( evotes.wiki.df$EV, function( li ) as.numeric( unlist( li )[ 1 ] ) ) )
 evotes.df <- data.frame()
 ```
-Refactor the data into one row per state.
-```{r warning = FALSE, message = FALSE}
+```{r warning = FALSE, message = FALSE, echo = FALSE}
 for( row.idx in 1:nrow( evotes.wiki.df ) ) {
   states.vec <- trimws( unlist( strsplit( evotes.wiki.df[ row.idx, 2 ], "," ) ) )
   evotes.df  <- rbind( evotes.df, cbind( states.vec, evotes.wiki.df[ row.idx, 1] ) )
 }
-```{r warning = FALSE, message = FALSE, echo = FALSE}
 names( evotes.df ) <- c( "State", "Electoral Votes" )
 ```
 
-## Get the Electoral Votes 3 {.codefont-small}
+## Get the Electoral Votes {.codefont-small}
 
 Display the first few rows of the data.
 
@@ -317,11 +335,124 @@ Display the first few rows of the data.
 knitr::kable( head( evotes.df, 3 ) )
 ```
 
+## Get the Popular Vote  {.codefont-small} 
 
-## Get the Popular Vote  1
+![](images/google-at-cook.png)
+
+<https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8>
 
 
-## Get the Popular Vote  2
+## Get the Popular Vote  {.codefont-small} 
+
+```{r warning = FALSE, message = FALSE, echo = FALSE}
+#
+# --- Library Dependencies ---
+#
+library( magrittr )
+library( dplyr )
+library( googlesheets )
+
+electoral.votes.df <- read.csv( 
+                        "data/electoral-college.csv",
+                         header = FALSE, 
+                         quote="\"",
+                         sep = ",", 
+                         na.strings = c( "NA", "-" ),
+                         allowEscapes = TRUE,
+                         strip.white  = TRUE,
+                         stringsAsFactors = TRUE,
+                         comment.char="#" 
+                       )
+
+names( electoral.votes.df ) <- c( "Electoral.Votes", "State" )
+electoral.votes.df$State    <- gsub( "\\*", "", electoral.votes.df$State )
+```
+
+Retrieve the certified popular votes from the Cook Report's Google spreadsheet.
+
+```{r warning = FALSE, message = FALSE, echo = TRUE}
+official.gs <- gs_url( c( "https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/" ) ) 
+votes.df <- official.gs %>% gs_read( range = "A12:D24", col_names = FALSE )
+```
+```{r warning = FALSE, message = FALSE, echo = FALSE}
+swing.df   <- official.gs %>% gs_read( range = "A12:D24", col_names = FALSE ) %>% data.frame()
+noswing.df <- official.gs %>% gs_read( range = "A27:D64", col_names = FALSE ) %>% data.frame()
+votes.df <- rbind( swing.df, noswing.df )
+names( votes.df  )<- c( "State", "Clinton", "Trump", "Other" )
+votes.df$State <- gsub( "\\*", "", votes.df$State )
+```
+
+View the first few rows.
+
+```{r warning = FALSE, message = FALSE}
+knitr::kable( head( votes.df, 3 ) )
+```
+
+## Combine with the ELectoral Vote  {.codefont-small} 
+
+Merge in the electoral vote information.
+
+```{r}
+votes.df <- merge( votes.df, electoral.votes.df )
+```
+View the first few rows
+
+```{r warning = FALSE, message = FALSE}
+knitr::kable( head( votes.df, 3 ) )
+```
+
+## Calculate Electoral Vote Totals {.codefont-small} 
+
+Count the actual electoral votes for each candidate.
+
+**Trump**
+```{r}
+sum( filter( votes.df, Trump > Clinton )$Electoral.Votes ) 
+```
+
+**Clinton**
+```{r}
+sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
+```
+
+```{r echo = FALSE}
+attach( votes.df )
+
+Trump.recount   <- 0
+Clinton.recount <- 0
+```
+
+## Transfer 1% of Popular Vote  {.codefont-small} 
+
+Take one percent of President Trump's popular vote from each state.
+Subtract it from his total. Add it to Hillary Clinton's total.
+
+```{r}
+Trump.one.pct <- floor( Trump * 0.1 ) 
+
+votes.df$Trump.recount   <- Trump   - Trump.one.pct 
+votes.df$Clinton.recount <- Clinton + Trump.one.pct 
+```
+
+```{r echo = FALSE}
+Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" ) 
+
+detach( votes.df )
+```
+
+## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
+
+Calculate the new electoral vote totals.
+```{r}
+**Trump**
+sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
+
+**Clinton**
+```{r}
+sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
+```
+
+The states that flipped were: Wisconsin, Michigan, and Pennsylvania.
 
 
 # Conclusion
