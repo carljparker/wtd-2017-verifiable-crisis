@@ -25,11 +25,11 @@ Nature, 70% of them had failed to reproduce at least one other
 scientist's experiment and 50% had failed to reproduce one of their own
 experiments. 
 
-chemistry: 90% (60%),
-biology: 80% (60%),
-physics and engineering: 70% (50%),
-medicine: 70% (60%),
-Earth and environment science: 60% (40%).
+chemistry                      |  90% (60%)
+biology                        |  80% (60%)
+physics and engineering        |  70% (50%)
+medicine                       |  70% (60%)
+Earth and environment science  |  60% (40%)
 
 
 ## Replication Crisis
@@ -44,9 +44,7 @@ From Wikipedia, the free encyclopedia
 <https://en.wikipedia.org/wiki/Replication_crisis#Marketing>
 
 
-## The Aftermath: Reproducible Research
-
-Feeling assailed, the statistics community responded.
+## Reproducible Research 1
 
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
@@ -63,7 +61,7 @@ Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 \* Reproducible Research in Computational Science, Science, Dec, 2011
 
 
-## Reproducible Research
+## Reproducible Research 2
 
 An article about computational science in a scientific publication is
 not the scholarship itself, it is merely advertising the scholarship.
@@ -99,18 +97,15 @@ Tool that builds the RMarkdown to various output formats.
 
 ## Reproducibility Ecosystem
 
-- RMarkdown, Knitr
+- RMarkdown, Knitr,w
 - GitHub
 - Make
 
 
-
-
 ## The Takeaway
 
-Code that the document references lives inside the document . . .
-
-. . . and is executable in the context of the document.
+Code that supports the document is embedded in the document and is
+executed when the document is built.
 
 
 # Part 2: Tech Writing, Reproducibility, and Code
@@ -136,7 +131,7 @@ Code that the document references lives inside the document . . .
 - Redmond, WA
 - Year: 2008
 - Email: Yes
-- Code samples: Inevitable
+- Code samples: Inevitably
 
 
 ## Definition: Byzantine
