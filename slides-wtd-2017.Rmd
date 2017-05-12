@@ -10,12 +10,25 @@ output:
 
 # Part 1: The Replication Crisis in Science
 
-## The Experiment Experiment
+## The Experiment Experiment 1
 
-A team of investigators set out to replicate the findings from
-<b>hundred</b> peer-reviewed published research papers.
+In 2008, team of investigators led by Brian Nosek set out to replicate
+the findings from <b>hundred</b> peer-reviewed published research papers
+in the area of psychology.
 
-Only <b>29</b> of the experiments could be replicated.
+NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
+
+
+## The Experiment Experiment 2
+
+![](images/science-experiment.png)
+
+<http://science.sciencemag.org/content/349/6251/aac4716>
+
+
+## The Experiment Experiment 3
+
+Only <b>39</b> of the experiments could be replicated.
 
 
 ## More Studies...Similar Results
@@ -48,11 +61,11 @@ From Wikipedia, the free encyclopedia
 
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
-- Replication, the ability to re-enact the experiment was too high a
-  bar.
+- <i>Replication</i>, the ability to re-enact the experiment was too
+  high a bar.
 
-- Instead, Reproducibility, the ability to reach the same conclusions
-  given the same data and computational software.
+- Instead, <i>Reproducibility</i>, the ability to reach the same
+  conclusions given the same data and computational software.
 
 - Reproduciblity requires that any published research make available
   both data that was collected and the code that processed the data.
@@ -83,10 +96,12 @@ together_.
 
 ## RMarkdown and Knitr 1
 
-RMarkdown
+<b>RMarkdown</b>
+
 Extensions to enable Markdown to embed executable code.
 
-Knitr
+<b>Knitr</b>
+
 Tool that builds the RMarkdown to various output formats.
 
 
