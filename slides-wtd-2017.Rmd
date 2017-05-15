@@ -13,15 +13,16 @@ output:
 
 ## The Experiment Experiment    {.embiggen}  
 
-In 2008, team of investigators led by Brian Nosek set out to replicate
-the findings from <b>hundred</b> peer-reviewed published research papers
-in the area of psychology.
+In 2008, a team of investigators led by Brian Nosek set out to replicate
+the findings from a <b>hundred</b> peer-reviewed published research
+papers in the area of psychology.
 
-NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
+NPR later referred to Nosek's work as <em>The Experiment Experiment</em>.
 
-## {.vertical-high}
 
-![](images/science-experiment.png)
+## {.vertical}
+
+![](images/experiment-experiment.png)
 
 
 ## The Experiment Experiment 
@@ -33,25 +34,28 @@ NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
 
 ## The Experiment Experiment    {.embiggen} 
 
-At of the 100 experiments that Nosek's investigated . . .
+At of the 100 experiments that Nosek investigated . . .
 
 . . . only <b>39</b> could be replicated.
 
 
-<!--
-## More Studies...Similar Results
+## Further Studies...Similar Results
 
 According to a 2016 poll of 1,500 scientists reported in the journal
 Nature, 70% of them had failed to reproduce at least one other
 scientist's experiment and 50% had failed to reproduce one of their own
 experiments. 
 
-chemistry                      |  90% (60%)
-biology                        |  80% (60%)
-physics and engineering        |  70% (50%)
-medicine                       |  70% (60%)
-Earth and environment science  |  60% (40%)
--->
+|Field                          |Colleague's Work|Own Work|
+|:------------------------------|----------------|--------|
+|chemistry                      |  90%           | 60%    |
+|biology                        |  80%           | 60%    |
+|physics and engineering        |  70%           | 50%    |
+|medicine                       |  70%           | 60%    |
+|Earth and environment science  |  60%           | 40%    |
+
+From Wikipedia
+<https://en.wikipedia.org/wiki/Replication_crisis>
 
 
 ## Replication Crisis
@@ -62,8 +66,8 @@ results of many scientific experiments are difficult or impossible to
 replicate on subsequent investigation, either by independent researchers
 or _by the original researchers themselves_.
 
-From Wikipedia, the free encyclopedia
-<https://en.wikipedia.org/wiki/Replication_crisis#Marketing>
+From Wikipedia
+<https://en.wikipedia.org/wiki/Replication_crisis>
 
 
 ## Reproducible Research 1
