@@ -32,7 +32,7 @@ NPR later referred to Nosek's work as <em>The Experiment Experiment</em>.
 <http://science.sciencemag.org/content/349/6251/aac4716>
 
 
-## The Experiment Experiment   
+## The Experiment Experiment  {.embiggen}
 
 Of the 100 experiments that Nosek investigated . . .
 
@@ -47,19 +47,6 @@ scientist's experiment and 50% had failed to reproduce one of their own
 experiments. 
 
 <https://en.wikipedia.org/wiki/Replication_crisis>
-
-<!--
-
-|Field                          |Colleague's Work|Own Work|
-|:------------------------------|----------------|--------|
-|chemistry                      |  90%           | 60%    |
-|biology                        |  80%           | 60%    |
-|physics and engineering        |  70%           | 50%    |
-|medicine                       |  70%           | 60%    |
-|Earth and environment science  |  60%           | 40%    |
-
--->
-
 
 
 ## Replication Crisis
@@ -84,7 +71,7 @@ Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
 ## Reproducible Research 
 
-- Reproducibility requires that any published research make available both data that was collected and the code that processed the data.
+Reproducibility requires that any published research make available both data that was collected and the code that processed the data.
 
 
 ## Enabling Reproducible Research
@@ -96,16 +83,17 @@ The solution was to find a way to _keep the research paper and the code
 together_.
 
 
-## 
+## {.embiggen-really .vertical-high}
 
+<div class = "centered">
 R
+</div>
 
 
-## RMarkdown and Knitr 1  
+## RMarkdown and Knitr   
 
 <b>RMarkdown</b></br>
 Extensions to enable Markdown to embed executable code.
-
 
 <b>Knitr</b></br>
 Tool that builds the RMarkdown to various output formats.
@@ -116,7 +104,7 @@ Tool that builds the RMarkdown to various output formats.
 ![](images/knitr-process.png)
 
 
-##
+##  {.embiggen-more .vertical-high} 
 
 GitHub
 
@@ -129,21 +117,20 @@ document.
 </div>
 
 
-## Reproducibility Ecosystem   
+## Reproducibility Ecosystem  {.embiggen}   
 
 - RMarkdown 
 - Knitr
 - GitHub
 
 
-## The Takeaway Idea
+## The Takeaway Idea  {.embiggen}
 
 Code that supports the document is embedded in the document and is
 executed when the document is built.
 
 
 # Part 2: Tech Writing, Reproducibility, and Code
-
 
 ## A long time ago at a company not far away . . . Code Samples   
 
@@ -159,7 +146,7 @@ executed when the document is built.
 ![](images/i386.png)
 
 
-## Documentation and Sample Code: Issues
+## Documentation and Sample Code
 
 - Verifying that the code snippets in the docs work.
 - Keeping the code snippets in the docs synch'd with the actual code.
@@ -168,10 +155,10 @@ executed when the document is built.
 
 ## Definition: Byzantine
 
-![](images/byzantine-defn.png)
+![](images/byzantine-defn-resize-150.png)
 
 
-##
+##  {.embiggen-more}
 
 The solution is to bring the technical writing and the sample code into
 a single document.
@@ -196,6 +183,7 @@ n = 5
 for i in range( 1, n ):
     print( i ** 2 )
 ```
+
 
 ## Language Support in Knitr  
 
@@ -257,7 +245,7 @@ Nice example of simultaneous invention.
 # Part 3: Social Discourse, Misinformation, and Fake News
 
 
-## {.embolden .vertical-high}
+## {.embiggen-more .embolden .vertical-high}
 
 Lies, Fake News, and Statistics
 
@@ -282,12 +270,14 @@ ocean of misinformation.
 ![](images/kirk-59029681247aa891782881.gif)
 
 
-## 
+## {.embiggen-more}
 
-Fake News vs Verifiable News
+<p>Fake News</p> 
+<p>vs</p> 
+<p>Verifiable News</p>
 
 
-## Example: How close was the election really?
+## Example: How close was the election <em>really</em>?
 
 What if 1% of those who votes for Donald Trump--on a state-by-state
 basis had voted for Hillary Clinton instead?
@@ -301,6 +291,7 @@ library(maps)
 id.state <- c( 1:19, 20, 20, 20, 21, 21, 22:30, 31, 31, 31, 31, 32, 32, 32, 33:44, 45, 45, 45, 46, 46, 46, 46, 46, 47, 48, 49 )
 col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
 ```
+
 
 ## What actually happened  {.vertical}
 
@@ -441,6 +432,7 @@ View the first few rows.
 knitr::kable( head( votes.df, 3 ) )
 ```
 
+
 ## Combine with the Electoral Vote  {.codefont-small} 
 
 Merge in the electoral vote information.
@@ -476,6 +468,7 @@ Trump.recount   <- 0
 Clinton.recount <- 0
 ```
 
+
 ## Transfer 1% of Popular Vote  {.codefont-small} 
 
 Take one percent of President Trump's popular vote from each state.
@@ -507,7 +500,8 @@ sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes )
 sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
 ```
 
-## {.vertical}
+
+## {.embiggen .vertical}
 
 The states that flipped were: 
 

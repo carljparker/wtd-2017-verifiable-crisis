@@ -8,6 +8,18 @@ p, li {
   color: black;
 }
 
+.embiggen {
+  font-size: 1.5em;
+}
+
+.embiggen-more {
+  font-size: 2em;
+}
+
+.embiggen-really {
+  font-size: 3em;
+}
+
 .embolden p {
   font-weight: bold;
 }
@@ -24,7 +36,6 @@ p, li {
     color: blue;
 }
 
-
 .colortext p {
   color: blue;
 }
@@ -40,3 +51,4 @@ p, li {
   top: 50%;
   transform: perspective(1px) translateY(-85%);
 }
+
