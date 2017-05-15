@@ -126,7 +126,7 @@ document.
 - GitHub
 
 
-## The Takeaway Idea  {.embiggen}
+## {.embiggen}
 
 Code that supports the document is embedded in the document and is
 executed when the document is built.
@@ -213,33 +213,37 @@ Notably absent:
 -->
 
 
-## Similar Technologies: Knitpy
+## Knitpy
 
-- [knitpy](https://github.com/janschulz/knitpy/blob/master/README.md) (and [stitch](https://github.com/pystitch/stitch/blob/master/README.rst))
 - Similar to Knitr, but with enhanced support for Python.
 
 
-## Similar Technologies: Jupyter Notebooks  
+<div class="notes">
+
+[knitpy](https://github.com/janschulz/knitpy/blob/master/README.md) 
+
+[stitch](https://github.com/pystitch/stitch/blob/master/README.rst)
+
+</div>
+
+
+## Jupyter Notebooks  
 
 - Interactive code mixed with expository text.
 - Supports Python, R, and other languages.
 
 
-## Similar Technologies: Bootstrap
+## Bootstrap
 
-- [Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
 - The HTML documentation for Bootstrap uses Bootstrap for styling.
 
-<!--
-- Storyteller
-- Executable Specifications (Microsoft).
--->
 
 <div class="notes">
 
-I am demo'ing R because I am most familiar with R.
+[Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
 
-Nice example of simultaneous invention.
+Storyteller
+Executable Specifications (Microsoft).
 
 </div>
 
@@ -281,13 +285,11 @@ ocean of misinformation.
 </div>
 
 
-<div class="notes">
+## Verifiable News  {.embiggen}
 
-Scrape a website
-Access online databases or data sets
-Call web services
-
-</div>
+- Scrape a website
+- Access online databases 
+- Call web services
 
 
 ## Example: How close was the election <em>really</em>?
