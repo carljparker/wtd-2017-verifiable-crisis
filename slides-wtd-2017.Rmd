@@ -309,7 +309,7 @@ the result.
 ## What actually happened
 
 
-```{r warning = FALSE, message = FALSE, echo = FALSE}
+```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center"}
 library(maps)
 
 states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
@@ -335,7 +335,7 @@ states <- map( database = "usa" )
 ## What actually happened
 
 
-```{r warning = FALSE, message = FALSE, echo = FALSE}
+```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center"}
 library( ggplot2 )
 library( fiftystater )
 
