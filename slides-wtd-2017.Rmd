@@ -270,11 +270,13 @@ ocean of misinformation.
 ![](images/kirk-59029681247aa891782881.gif)
 
 
-## {.embiggen-more}
+## {.embiggen-more  .embolden}
 
+<div class = "centered">
 <p>Fake News</p> 
 <p>vs</p> 
 <p>Verifiable News</p>
+</div>
 
 
 ## Example: How close was the election <em>really</em>?
@@ -426,6 +428,8 @@ names( votes.df  )<- c( "State", "Clinton", "Trump", "Other" )
 votes.df$State <- gsub( "\\*", "", votes.df$State )
 ```
 
+## Get the Popular Vote  {.codefont-small} 
+
 View the first few rows.
 
 ```{r warning = FALSE, message = FALSE}
@@ -440,6 +444,9 @@ Merge in the electoral vote information.
 ```{r}
 votes.df <- merge( votes.df, electoral.votes.df )
 ```
+
+## Combine with the Electoral Vote  {.codefont-small} 
+
 View the first few rows
 
 ```{r warning = FALSE, message = FALSE}
