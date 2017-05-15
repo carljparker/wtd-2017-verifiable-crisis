@@ -314,7 +314,7 @@ col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
 
 ## What actually happened  {.vertical}
 
-```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 8}
+```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 6, fig.width = 8}
 states <- map(database = "state", fill = TRUE, col = col.state )
 ```
 
