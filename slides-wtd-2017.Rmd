@@ -46,6 +46,10 @@ Nature, 70% of them had failed to reproduce at least one other
 scientist's experiment and 50% had failed to reproduce one of their own
 experiments. 
 
+<https://en.wikipedia.org/wiki/Replication_crisis>
+
+<!--
+
 |Field                          |Colleague's Work|Own Work|
 |:------------------------------|----------------|--------|
 |chemistry                      |  90%           | 60%    |
@@ -54,7 +58,8 @@ experiments.
 |medicine                       |  70%           | 60%    |
 |Earth and environment science  |  60%           | 40%    |
 
-<https://en.wikipedia.org/wiki/Replication_crisis>
+-->
+
 
 
 ## Replication Crisis
@@ -67,35 +72,33 @@ researchers themselves_.
 <https://en.wikipedia.org/wiki/Replication_crisis>
 
 
-## Reproducible Research 1
+## Reproducible Research 
 
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
 - <em>Replication</em>, the ability to re-enact the experiment was too high a bar.
-- Instead, <em>Reproducibility</em>, the ability to reach the same conclusions given the same data and computational software.
-- Reproducibility requires that any published research make available both data that was collected and the code that processed the data.
+- <em>Reproducibility</em>, the ability to reach the same conclusions given the same data and computational software.
 
 \* Reproducible Research in Computational Science, Science, Dec, 2011
 
 
-## Reproducible Research 2
+## Reproducible Research 
 
-An article about computational science in a scientific publication is
-not the scholarship itself, it is merely advertising the scholarship.
+- Reproducibility requires that any published research make available both data that was collected and the code that processed the data.
 
-Dave Donoho, Stanford University
-                                                                                   
 
 ## Enabling Reproducible Research
 
-One of the barriers to reproducible research is that the code used to
-produce the research is usually maintained separately from the research
-paper itself.
-
-The paper is published, but the code becomes . . . misplaced.
+A barrier to reproducible research is that the code gets out of sync
+with the published paper&emdash;or the code is simply lost.
 
 The solution was to find a way to _keep the research paper and the code
 together_.
+
+
+## 
+
+R
 
 
 ## RMarkdown and Knitr 1  
@@ -113,6 +116,19 @@ Tool that builds the RMarkdown to various output formats.
 ![](images/knitr-process.png)
 
 
+##
+
+GitHub
+
+<div class="notes">
+
+When it is time to publish, upload the RMarkdown document and the data
+a GitHub repository and reference that repository in the published
+document.
+
+</div>
+
+
 ## Reproducibility Ecosystem   
 
 - RMarkdown 
@@ -120,7 +136,7 @@ Tool that builds the RMarkdown to various output formats.
 - GitHub
 
 
-## The Takeaway  
+## The Takeaway Idea
 
 Code that supports the document is embedded in the document and is
 executed when the document is built.
@@ -143,29 +159,22 @@ executed when the document is built.
 ![](images/i386.png)
 
 
+## Documentation and Sample Code: Issues
+
+- Verifying that the code snippets in the docs work.
+- Keeping the code snippets in the docs synch'd with the actual code.
+- Providing the customer with enough information to <em>reproduce</em> the result.
+
+
 ## Definition: Byzantine
 
 ![](images/byzantine-defn.png)
 
 
-## Keeping Docs and Sample Code Separate  
+##
 
-- Verifying that the code snippets in the docs work.
-- Keeping the code snippets in the docs synch'd with the actual code.
-- Providing the customer with enough information to reproduce the result.
-
-
-<!--
-
-## {.embolden .vertical-high}
-
-<div class = "centered" >
-<p>Writing About Software</p>
-<p>vs</p>
-<p>Enabling Reproducible Experiences</p>
-</div>
-
--->
+The solution is to bring the technical writing and the sample code into
+a single document.
 
 
 ## Example: R {.codefont-big}
@@ -225,6 +234,7 @@ Notably absent:
 - Interactive code mixed with expository text.
 - Supports Python, R, and other languages.
 
+
 ## Similar Technologies: Bootstrap
 
 - [Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
@@ -254,7 +264,8 @@ Lies, Fake News, and Statistics
 
 <div class="notes">
 
-For this part, I need you to use you imagination.
+In recent times, I have started to feel as though I am swimming in an
+ocean of misinformation.
 
 </div>
 
@@ -266,17 +277,14 @@ For this part, I need you to use you imagination.
 </div>
 
 
-<!--
-![](images/20170331-veracity.png)
--->
-
-
 ## Lies, Fake News, and Statistics
 
 ![](images/kirk-59029681247aa891782881.gif)
 
 
-## Fake News vs Verifiable News
+## 
+
+Fake News vs Verifiable News
 
 
 ## Example: How close was the election really?
@@ -286,10 +294,6 @@ basis had voted for Hillary Clinton instead?
 
 We have all the information we need to answer the question and publish
 the result.
-
-<!--
-![](images/credible-hulk-YxhdDzN__400x400.png)
--->
 
 
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
@@ -437,7 +441,7 @@ View the first few rows.
 knitr::kable( head( votes.df, 3 ) )
 ```
 
-## Combine with the ELectoral Vote  {.codefont-small} 
+## Combine with the Electoral Vote  {.codefont-small} 
 
 Merge in the electoral vote information.
 
