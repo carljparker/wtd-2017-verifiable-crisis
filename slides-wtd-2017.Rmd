@@ -305,6 +305,33 @@ the result.
 ![](images/credible-hulk-YxhdDzN__400x400.png)
 -->
 
+
+## What actually happened
+
+
+```{r warning = FALSE, message = FALSE, echo = FALSE}
+library(maps)
+
+states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
+
+str(states)
+
+states$names
+
+id.state <- c( 1:19, 20, 20, 20, 21, 21, 22:30, 31, 31, 31, 31, 32, 32, 32, 33:44, 45, 45, 45, 46, 46, 46, 46, 46, 47, 48, 49 )
+
+cbind( states$names, id.state )
+
+col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
+
+cbind( states$names, id.state )
+
+states <- map(database = "state", fill = TRUE, col = col.state )
+
+states <- map( database = "usa" )
+```
+
+
 ## What actually happened
 
 
@@ -333,8 +360,6 @@ p <- ggplot( crimes, aes( map_id = state ) ) +
 p + fifty_states_inset_boxes( ) 
 
 ```
-
-
 
 
 ## Get the Electoral Votes 
