@@ -69,25 +69,11 @@ researchers themselves_.
 
 ## Reproducible Research 1
 
-<!--
-
-<div class = "columns-2">
-![](images/peng-roger-linkedin.jpeg)
-
--->
-
-
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
-- <em>Replication</em>, the ability to re-enact the experiment was too
-  high a bar.
-
-- Instead, <em>Reproducibility</em>, the ability to reach the same
-  conclusions given the same data and computational software.
-
-- Reproducibility requires that any published research make available
-  both data that was collected and the code that processed the data.
-
+- <em>Replication</em>, the ability to re-enact the experiment was too high a bar.
+- Instead, <em>Reproducibility</em>, the ability to reach the same conclusions given the same data and computational software.
+- Reproducibility requires that any published research make available both data that was collected and the code that processed the data.
 
 \* Reproducible Research in Computational Science, Science, Dec, 2011
 
