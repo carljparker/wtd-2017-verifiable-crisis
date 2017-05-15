@@ -1,30 +1,34 @@
-p li {
-  color: red
+h1, h2, h3 {
+  font-size: 2em;
 }
 
-.embiggen h1 h2 p li {
-  font-size: 1.50em
+h1, h2, h3, p, li {
+  color: black;
+}
+
+.embiggen p, li {
+  font-size: 1.50em;
 }
 
 .embolden p {
-  font-weight: bold
+  font-weight: bold;
 }
 
 .codefont-big pre {
     font-size: 1.5;
     font-weight: bold;
-    color: blue
+    color: blue;
 }
 
 .codefont-small pre {
     font-size: .75;
     font-weight: bold;
-    color: blue
+    color: blue;
 }
 
 
 .colortext p {
-  color: blue
+  color: blue;
 }
 
 .vertical {
