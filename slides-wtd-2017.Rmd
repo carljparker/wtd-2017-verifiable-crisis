@@ -10,7 +10,8 @@ output:
 
 # Part 1: The Replication Crisis in Science
 
-## The Experiment Experiment 1
+
+## The Experiment Experiment    {.embiggen}  
 
 In 2008, team of investigators led by Brian Nosek set out to replicate
 the findings from <b>hundred</b> peer-reviewed published research papers
@@ -18,17 +19,23 @@ in the area of psychology.
 
 NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
 
+## {.vertical}
 
-## The Experiment Experiment 2
+![](images/science-experiment.png)
+
+
+## The Experiment Experiment 
 
 ![](images/science-experiment.png)
 
 <http://science.sciencemag.org/content/349/6251/aac4716>
 
 
-## The Experiment Experiment 3
+## The Experiment Experiment    {.embiggen} 
 
-Only <b>39</b> of the experiments could be replicated.
+At of the 100 experiments that Nosek's investigated . . .
+
+. . . only <b>39</b> could be replicated.
 
 
 <!--
@@ -104,7 +111,7 @@ The solution was to find a way to _keep the research paper and the code
 together_.
 
 
-## RMarkdown and Knitr 1
+## RMarkdown and Knitr 1   {.embiggen}  
 
 
 <b>RMarkdown</b></br>
@@ -120,14 +127,14 @@ Tool that builds the RMarkdown to various output formats.
 ![](images/knitr-process.png)
 
 
-## Reproducibility Ecosystem
+## Reproducibility Ecosystem    {.embiggen}  
 
 - RMarkdown, 
 - Knitr
 - GitHub
 
 
-## The Takeaway
+## The Takeaway   {.embiggen}  
 
 Code that supports the document is embedded in the document and is
 executed when the document is built.
@@ -136,7 +143,7 @@ executed when the document is built.
 # Part 2: Tech Writing, Reproducibility, and Code
 
 
-## A long time ago at a company not far away . . . Code Samples
+## A long time ago at a company not far away . . . Code Samples   {.embiggen}  
 
 - Intel Tech Support
 - Hillsboro, OR
@@ -155,7 +162,7 @@ executed when the document is built.
 ![](images/byzantine-defn.png)
 
 
-## Keeping Docs and Sample Code Separate
+## Keeping Docs and Sample Code Separate   {.embiggen}  
 
 - Verifying that the code snippets in the docs work.
 - Keeping the code snippets in the docs synch'd with the actual code.
@@ -175,15 +182,6 @@ executed when the document is built.
 -->
 
 
-## Example: Python {.codefont}
-
-```{python}
-n = 5
-
-for i in range( 1, n ):
-    print( i ** 2 )
-```
-
 ## Example: R {.codefont}
 
 ```{r}
@@ -194,7 +192,17 @@ for( i in 1:n ) {
 }
 ```
 
-## Language Support in Knitr
+
+## Example: Python {.codefont}
+
+```{python}
+n = 5
+
+for i in range( 1, n ):
+    print( i ** 2 )
+```
+
+## Language Support in Knitr   {.embiggen}  
 
 - R
 - C / C++
@@ -213,9 +221,11 @@ Notably absent:
 
 </div>
 
+<!--
 **Complete list of supported languages**
 
 <http://rmarkdown.rstudio.com/authoring_knitr_engines.html#rcpp>
+-->
 
 
 ## Similar Technologies: Knitpy
@@ -224,10 +234,10 @@ Notably absent:
 - Similar to Knitr, but with enhanced support for Python.
 
 
-## Similar Technologies: Jupyter Notebooks
+## Similar Technologies: Jupyter Notebooks   {.embiggen}  
 
-  - Interactive code mixed with expository text.
-  - Supports Python, R, and other languages.
+- Interactive code mixed with expository text.
+- Supports Python, R, and other languages.
 
 ## Similar Technologies: Bootstrap
 
@@ -250,7 +260,18 @@ Nice example of simultaneous invention.
 
 # Part 3: Social Discourse, Misinformation, and Fake News
 
-## Lies, Fake News, and Statistics
+
+## {.embiggen .embolden .vertical}
+
+Lies, Fake News, and Statistics
+
+
+<div class="notes">
+
+For this part, I need you to use you imagination.
+
+</div>
+
 
 ## Lies, Fake News, and Statistics
 
@@ -283,6 +304,37 @@ the result.
 <!--
 ![](images/credible-hulk-YxhdDzN__400x400.png)
 -->
+
+## What actually happened
+
+
+```{r warning = FALSE, message = FALSE, echo = FALSE}
+library( ggplot2 )
+library( fiftystater )
+
+data( "fifty_states" ) # this line is optional due to lazy data loading
+
+crimes <- data.frame( state = tolower( rownames( USArrests ) ), USArrests )
+
+# map_id creates the aesthetic mapping to the state name column in your data
+
+p <- ggplot( crimes, aes( map_id = state ) ) + 
+  # map points to the fifty_states shape data
+  geom_map( aes( fill = Assault ), map = fifty_states ) + 
+  expand_limits( x = fifty_states$long, y = fifty_states$lat ) +
+  coord_map( ) +
+  scale_x_continuous( breaks = NULL ) + 
+  scale_y_continuous( breaks = NULL ) +
+  labs( x = "", y = "" ) +
+  theme( legend.position = "bottom", 
+        panel.background = element_blank( ) )
+
+# add border boxes to AK/HI
+p + fifty_states_inset_boxes( ) 
+
+```
+
+
 
 
 ## Get the Electoral Votes 
@@ -443,9 +495,11 @@ detach( votes.df )
 ## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
 
 Calculate the new electoral vote totals.
-```{r}
+
 **Trump**
+```{r}
 sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
+```
 
 **Clinton**
 ```{r}
