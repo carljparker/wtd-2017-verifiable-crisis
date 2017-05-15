@@ -1,4 +1,8 @@
-.embiggen p {
+p li {
+  color: red
+}
+
+.embiggen h1 h2 p li {
   font-size: 1.50em
 }
 

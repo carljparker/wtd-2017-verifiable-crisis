@@ -524,6 +524,7 @@ sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes )
 
 The states that flipped were: Wisconsin, Michigan, and Pennsylvania.
 
+-->
 
 # Conclusion
 
