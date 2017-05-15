@@ -19,7 +19,7 @@ in the area of psychology.
 
 NPR later referred to Nosek's work as <i>The Experiment Experiment</i>.
 
-## {.vertical}
+## {.vertical-high}
 
 ![](images/science-experiment.png)
 
@@ -171,7 +171,7 @@ executed when the document is built.
 
 <!--
 
-## {.embiggen .embolden .vertical}
+## {.embiggen .embolden .vertical-high}
 
 <div class = "centered" >
 <p>Writing About Software</p>
@@ -261,7 +261,7 @@ Nice example of simultaneous invention.
 # Part 3: Social Discourse, Misinformation, and Fake News
 
 
-## {.embiggen .embolden .vertical}
+## {.embiggen .embolden .vertical-high}
 
 Lies, Fake News, and Statistics
 
@@ -306,29 +306,16 @@ the result.
 -->
 
 
-## What actually happened
+```{r warning = FALSE, message = FALSE, echo = FALSE}
+library(maps)
+id.state <- c( 1:19, 20, 20, 20, 21, 21, 22:30, 31, 31, 31, 31, 32, 32, 32, 33:44, 45, 45, 45, 46, 46, 46, 46, 46, 47, 48, 49 )
+col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
+```
 
+## What actually happened  {.vertical}
 
 ```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 7, fig.width = 8}
-library(maps)
-
-states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
-
-str(states)
-
-states$names
-
-id.state <- c( 1:19, 20, 20, 20, 21, 21, 22:30, 31, 31, 31, 31, 32, 32, 32, 33:44, 45, 45, 45, 46, 46, 46, 46, 46, 47, 48, 49 )
-
-cbind( states$names, id.state )
-
-col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
-
-cbind( states$names, id.state )
-
 states <- map(database = "state", fill = TRUE, col = col.state )
-
-states <- map( database = "usa" )
 ```
 
 

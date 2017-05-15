@@ -26,5 +26,11 @@
 .vertical {
   position: relative;
   top: 50%;
+  transform: perspective(1px) translateY(-60%);
+}
+
+.vertical-high {
+  position: relative;
+  top: 50%;
   transform: perspective(1px) translateY(-85%);
 }
