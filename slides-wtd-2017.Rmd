@@ -106,7 +106,9 @@ Tool that builds the RMarkdown to various output formats.
 
 ##  {.embiggen-more .vertical-high} 
 
+<div class = "centered">
 GitHub
+</div>
 
 <div class="notes">
 
@@ -276,6 +278,15 @@ ocean of misinformation.
 <p>Fake News</p> 
 <p>vs</p> 
 <p>Verifiable News</p>
+</div>
+
+
+<div class="notes">
+
+Scrape a website
+Access online databases or data sets
+Call web services
+
 </div>
 
 
@@ -494,6 +505,16 @@ Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" )
 detach( votes.df )
 ```
 
+
+## {.embiggen .vertical}
+
+The following states flip: 
+
+- Michigan
+- Pennsylvania
+- Wisconsin
+
+
 ## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
 
 
@@ -506,15 +527,6 @@ sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes )
 ```{r}
 sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
 ```
-
-
-## {.embiggen .vertical}
-
-The states that flipped were: 
-
-- Michigan
-- Pennsylvania
-- Wisconsin
 
 
 # Conclusion
