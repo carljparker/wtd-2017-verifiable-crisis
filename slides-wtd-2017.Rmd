@@ -11,7 +11,7 @@ output:
 # Part 1: The Replication Crisis in Science
 
 
-## The Experiment Experiment    {.embiggen}  
+## The Experiment Experiment   
 
 In 2008, a team of investigators led by Brian Nosek set out to replicate
 the findings from a <b>hundred</b> peer-reviewed published research
@@ -32,9 +32,9 @@ NPR later referred to Nosek's work as <em>The Experiment Experiment</em>.
 <http://science.sciencemag.org/content/349/6251/aac4716>
 
 
-## The Experiment Experiment    {.embiggen} 
+## The Experiment Experiment   
 
-At of the 100 experiments that Nosek investigated . . .
+Of the 100 experiments that Nosek investigated . . .
 
 . . . only <b>39</b> could be replicated.
 
@@ -60,10 +60,9 @@ From Wikipedia
 
 ## Replication Crisis
 
-The <b>replication crisis</b> (or replicability crisis) refers to a
-methodological crisis in science in which scientists have found that the
-results of many scientific experiments are difficult or impossible to
-replicate on subsequent investigation, either by independent researchers
+The <b>replication crisis</b> replicability crisis) refers to a crisis
+in science in which the results of many scientific experiments are
+difficult or impossible to replicate, either by independent researchers
 or _by the original researchers themselves_.
 
 From Wikipedia
@@ -115,7 +114,7 @@ The solution was to find a way to _keep the research paper and the code
 together_.
 
 
-## RMarkdown and Knitr 1   {.embiggen}  
+## RMarkdown and Knitr 1  
 
 
 <b>RMarkdown</b></br>
@@ -131,14 +130,14 @@ Tool that builds the RMarkdown to various output formats.
 ![](images/knitr-process.png)
 
 
-## Reproducibility Ecosystem    {.embiggen}  
+## Reproducibility Ecosystem   
 
 - RMarkdown, 
 - Knitr
 - GitHub
 
 
-## The Takeaway   {.embiggen}  
+## The Takeaway  
 
 Code that supports the document is embedded in the document and is
 executed when the document is built.
@@ -147,7 +146,7 @@ executed when the document is built.
 # Part 2: Tech Writing, Reproducibility, and Code
 
 
-## A long time ago at a company not far away . . . Code Samples   {.embiggen}  
+## A long time ago at a company not far away . . . Code Samples   
 
 - Intel Tech Support
 - Hillsboro, OR
@@ -166,7 +165,7 @@ executed when the document is built.
 ![](images/byzantine-defn.png)
 
 
-## Keeping Docs and Sample Code Separate   {.embiggen}  
+## Keeping Docs and Sample Code Separate  
 
 - Verifying that the code snippets in the docs work.
 - Keeping the code snippets in the docs synch'd with the actual code.
@@ -175,7 +174,7 @@ executed when the document is built.
 
 <!--
 
-## {.embiggen .embolden .vertical-high}
+## {.embolden .vertical-high}
 
 <div class = "centered" >
 <p>Writing About Software</p>
@@ -186,7 +185,7 @@ executed when the document is built.
 -->
 
 
-## Example: R {.codefont}
+## Example: R {.codefont-big}
 
 ```{r}
 n <- 5
@@ -197,7 +196,7 @@ for( i in 1:n ) {
 ```
 
 
-## Example: Python {.codefont}
+## Example: Python {.codefont-big}
 
 ```{python}
 n = 5
@@ -206,7 +205,7 @@ for i in range( 1, n ):
     print( i ** 2 )
 ```
 
-## Language Support in Knitr   {.embiggen}  
+## Language Support in Knitr  
 
 - R
 - C / C++
@@ -238,7 +237,7 @@ Notably absent:
 - Similar to Knitr, but with enhanced support for Python.
 
 
-## Similar Technologies: Jupyter Notebooks   {.embiggen}  
+## Similar Technologies: Jupyter Notebooks  
 
 - Interactive code mixed with expository text.
 - Supports Python, R, and other languages.
@@ -265,7 +264,7 @@ Nice example of simultaneous invention.
 # Part 3: Social Discourse, Misinformation, and Fake News
 
 
-## {.embiggen .embolden .vertical-high}
+## {.embolden .vertical-high}
 
 Lies, Fake News, and Statistics
 

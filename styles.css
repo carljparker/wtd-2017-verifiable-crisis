@@ -1,13 +1,10 @@
 h1, h2, h3 {
   font-size: 2em;
-}
-
-h1, h2, h3, p, li {
   color: black;
 }
 
-.embiggen p, li {
-  font-size: 1.50em;
+p, li {
+  font-size: 1.50;
 }
 
 .embolden p {
@@ -15,13 +12,13 @@ h1, h2, h3, p, li {
 }
 
 .codefont-big pre {
-    font-size: 1.5;
+    font-size: 1.25em;
     font-weight: bold;
     color: blue;
 }
 
 .codefont-small pre {
-    font-size: .75;
+    font-size: .75em;
     font-weight: bold;
     color: blue;
 }
