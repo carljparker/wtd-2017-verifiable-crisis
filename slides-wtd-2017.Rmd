@@ -1,5 +1,5 @@
 ---
-title: "The Verifiability Crisis in Science, Tech Writing, and Life"
+title: "Intelligent Documents and the Verifiability Crisis in Science, Tech Writing, and Life"
 author: Carl Parker
 date: May 14, 2017
 output: 
@@ -54,18 +54,16 @@ experiments.
 |medicine                       |  70%           | 60%    |
 |Earth and environment science  |  60%           | 40%    |
 
-From Wikipedia
 <https://en.wikipedia.org/wiki/Replication_crisis>
 
 
 ## Replication Crisis
 
-The <b>replication crisis</b> replicability crisis) refers to a crisis
-in science in which the results of many scientific experiments are
-difficult or impossible to replicate, either by independent researchers
-or _by the original researchers themselves_.
+The <b>replication crisis</b> refers to a crisis in science in which the
+results of many scientific experiments are difficult or impossible to
+replicate, either by independent researchers or _by the original
+researchers themselves_.
 
-From Wikipedia
 <https://en.wikipedia.org/wiki/Replication_crisis>
 
 
@@ -81,13 +79,13 @@ From Wikipedia
 
 Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
 
-- <i>Replication</i>, the ability to re-enact the experiment was too
+- <em>Replication</em>, the ability to re-enact the experiment was too
   high a bar.
 
-- Instead, <i>Reproducibility</i>, the ability to reach the same
+- Instead, <em>Reproducibility</em>, the ability to reach the same
   conclusions given the same data and computational software.
 
-- Reproduciblity requires that any published research make available
+- Reproducibility requires that any published research make available
   both data that was collected and the code that processed the data.
 
 
@@ -116,7 +114,6 @@ together_.
 
 ## RMarkdown and Knitr 1  
 
-
 <b>RMarkdown</b></br>
 Extensions to enable Markdown to embed executable code.
 
@@ -132,7 +129,7 @@ Tool that builds the RMarkdown to various output formats.
 
 ## Reproducibility Ecosystem   
 
-- RMarkdown, 
+- RMarkdown 
 - Knitr
 - GitHub
 
@@ -324,7 +321,6 @@ states <- map(database = "state", fill = TRUE, col = col.state )
 
 ## What actually happened
 
-
 ```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center"}
 library( ggplot2 )
 library( fiftystater )
@@ -468,6 +464,7 @@ View the first few rows
 knitr::kable( head( votes.df, 3 ) )
 ```
 
+
 ## Calculate Electoral Vote Totals {.codefont-small} 
 
 Count the actual electoral votes for each candidate.
@@ -509,7 +506,6 @@ detach( votes.df )
 
 ## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
 
-Calculate the new electoral vote totals.
 
 **Trump**
 ```{r}
@@ -521,9 +517,14 @@ sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes )
 sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
 ```
 
-The states that flipped were: Wisconsin, Michigan, and Pennsylvania.
+## {.vertical}
 
--->
+The states that flipped were: 
+
+- Michigan
+- Pennsylvania
+- Wisconsin
+
 
 # Conclusion
 
