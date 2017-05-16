@@ -316,7 +316,9 @@ col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
 
 ![](images/electoral-votes-wikipedia-20170509.png)
 
-Ref: [Current electoral vote distribution](https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution) 
+<div style = "font-size: 0.55em; font-weight: bold">
+<https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution>
+</div>
 
 
 ## Get the Electoral Votes  {.codefont-small}
@@ -328,9 +330,10 @@ library( rvest )
 Get the electoral votes from Wikipedia.
 
 ```{r warning = FALSE, message = FALSE}
-wiki.elect.votes <- c( 
-  "https://en.wikipedia.org/wiki/Electoral_College_(United_States)#Current_electoral_vote_distribution"
-)
+wiki.elect.votes <- paste( 
+  "https://en.wikipedia.org/wiki/Electoral_College_(United_States)",
+  "#Current_electoral_vote_distribution",
+  sep = "" )
 ```
 Convert the HTML table into an R dataframe.
 ```{r warning = FALSE, message = FALSE}
@@ -362,11 +365,13 @@ Display the first few rows of the data.
 knitr::kable( head( evotes.df, 3 ) )
 ```
 
-## Get the Popular Vote  {.codefont-small} 
+## Get the Popular Vote  
 
 ![](images/google-at-cook.png)
 
+<div style = "font-size: 0.55em; font-weight: bold">
 <https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8>
+</div>
 
 
 ## Get the Popular Vote  {.codefont-small} 
@@ -421,7 +426,9 @@ electoral.votes.df$State    <- gsub( "\\*", "", electoral.votes.df$State )
 Retrieve the certified popular votes from the Cook Report's Google spreadsheet.
 
 ```{r warning = FALSE, message = FALSE, echo = TRUE}
-official.gs <- gs_url( c( "https://docs.google.com/spreadsheets/d/133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/" ) ) 
+official.gs <- gs_url( paste( "https://docs.google.com/spreadsheets/d/",
+                              "133Eb4qQmOxNvtesw2hdVns073R68EZx4SfCnP4IGQf8/",
+                              sep = "" ) ) 
 votes.df <- official.gs %>% gs_read( range = "A12:D24", col_names = FALSE )
 ```
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
@@ -458,7 +465,7 @@ knitr::kable( head( votes.df, 3 ) )
 ```
 
 
-## Calculate Electoral Vote Totals {.codefont-small} 
+## Calculate Electoral Vote Totals {.codefont-med} 
 
 Count the actual electoral votes for each candidate.
 
@@ -543,7 +550,7 @@ viz_state_affiliation( state.party.df )
 ```
 
 
-## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
+## Calculate the Hypothetical Electoral Vote Totals  {.codefont-med} 
 
 
 **Trump**
@@ -557,7 +564,19 @@ sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes )
 ```
 
 
-# Conclusion
+# Epilogue
+
+## Nate Silver & FiveThirtyEight
+
+What A Difference 2 Percentage Points Makes
+<https://fivethirtyeight.com/features/what-a-difference-2-percentage-points-makes/>
+
+
+## {.embiggen .vertical}
+
+The source code is real
+
+- A.J. Rossini, Literate Statistical Practice
 
 
 
