@@ -58,23 +58,40 @@ sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes )
 red.state  <- tolower( filter( votes.df, Trump.recount > Clinton.recount )$State )
 blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State )
 
-red.state.col  <- t( rbind( red.state, "red" ) ) 
-blue.state.col <- t( rbind( blue.state, "blue" ) ) 
-
-state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
-names( state.party.df ) <- c( "state.name", "party" )
 
 library(maps)
 library(ggplot2)
 
-states <- map_data( "state" )
-state.map.df <- data.frame( unique( cbind( states$region, states$subregion ) )[ , 1 ] )
-names( state.map.df ) <- c( "state.name" )
+#
+# Map a color to each state based on its party.
+#
+red.state.col  <- cbind( red.state, "red" ) 
+blue.state.col <- cbind( blue.state, "blue" )  
+state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
+names( state.party.df ) <- c( "state.name", "party" )
 
-state.map.party.df <- merge( state.map.df, state.party.df )
-state.map.party.df$party <- as.character( state.map.party.df$party )
+viz_state_affiliation( state.party.df )
 
-states <- map(database = "state", fill = TRUE, col = state.map.party.df$party )
+viz_state_affiliation <- function( state.to.party.map.df ) {
+  #
+  # Get the vector of names from the the "state" database.
+  # Some states are duplicated.
+  #
+  states <- map_data( "state" )
+  state.map.df <- data.frame( unique( cbind( states$region, states$subregion ) )[ , 1 ] )
+  names( state.map.df ) <- c( "state.name" )
+
+  #
+  # Merge in the state-to-party mapping.
+  #
+  state.map.party.df <- merge( state.map.df, state.party.df )
+  state.map.party.df$party <- as.character( state.map.party.df$party )
+
+  #
+  # Render
+  #
+  states <- map(database = "state", fill = TRUE, col = state.map.party.df$party )
+}
 
 #
 # NYT Election Results
