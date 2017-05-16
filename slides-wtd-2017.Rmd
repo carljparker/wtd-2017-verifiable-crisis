@@ -10,6 +10,10 @@ output:
 
 # Part 1: The Replication Crisis in Science
 
+<div class="notes">
+Carl, don't race through your slides.
+</div>
+
 
 ## The Experiment Experiment   
 
@@ -36,15 +40,15 @@ NPR later referred to Nosek's work as <em>The Experiment Experiment</em>.
 
 Of the 100 experiments that Nosek investigated . . .
 
-. . . only <b>39</b> could be replicated.
+. . . <b>61</b> could <b>not</b> be replicated.
 
 
 ## Further Studies...Similar Results
 
 According to a 2016 poll of 1,500 scientists reported in the journal
-Nature, 70% of them had failed to reproduce at least one other
-scientist's experiment and 50% had failed to reproduce one of their own
-experiments. 
+Nature, <b>70%</b> of them had failed to reproduce at least one other
+scientist's experiment and <b>50%</b> had failed to reproduce one of
+their own experiments. 
 
 <https://en.wikipedia.org/wiki/Replication_crisis>
 
@@ -80,7 +84,7 @@ A barrier to reproducible research is that the code gets out of sync
 with the published paper&emdash;or the code is simply lost.
 
 The solution was to find a way to _keep the research paper and the code
-together_.
+together and in sync_.
 
 
 ## {.embiggen-really .vertical-high}
@@ -151,7 +155,7 @@ executed when the document is built.
 ## Documentation and Sample Code
 
 - Verifying that the code snippets in the docs work.
-- Keeping the code snippets in the docs synch'd with the actual code.
+- Keeping the code snippets in the docs sync'd with the actual code.
 - Providing the customer with enough information to <em>reproduce</em> the result.
 
 
@@ -409,7 +413,30 @@ knitr::kable( head( evotes.df, 3 ) )
 #
 library( magrittr )
 library( dplyr )
+library( ggplot2 )
+library( maps )
 library( googlesheets )
+
+viz_state_affiliation <- function( state.to.party.map.df ) {
+  #
+  # Get the vector of names from the the "state" database.
+  # Some states are duplicated.
+  #
+  states <- map_data( "state" )
+  state.map.df <- data.frame( unique( cbind( states$region, states$subregion ) )[ , 1 ] )
+  names( state.map.df ) <- c( "state.name" )
+
+  #
+  # Merge in the state-to-party mapping.
+  #
+  state.map.party.df <- merge( state.map.df, state.party.df )
+  state.map.party.df$party <- as.character( state.map.party.df$party )
+
+  #
+  # Render
+  #
+  states <- map(database = "state", fill = TRUE, col = state.map.party.df$party )
+}
 
 electoral.votes.df <- read.csv( 
                         "data/electoral-college.csv",
@@ -481,6 +508,18 @@ sum( filter( votes.df, Trump > Clinton )$Electoral.Votes )
 sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
 ```
 
+```{r}
+red.state  <- tolower( filter( votes.df, Trump > Clinton )$State )
+blue.state <- tolower( filter( votes.df, Trump < Clinton )$State )
+
+red.state.col  <- cbind( red.state, "red" ) 
+blue.state.col <- cbind( blue.state, "blue" )  
+state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
+names( state.party.df ) <- c( "state.name", "party" )
+
+viz_state_affiliation( state.party.df )
+```
+
 ```{r echo = FALSE}
 attach( votes.df )
 
@@ -517,17 +556,37 @@ The following states flip:
 - Wisconsin
 
 
+```{r}
+sum( filter( votes.df, Trump.recount > Clinton.recount )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes ) 
+
+red.state  <- tolower( filter( votes.df, Trump.recount > Clinton.recount )$State )
+blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State )
+
+
+#
+# Map a color to each state based on its party.
+#
+red.state.col  <- cbind( red.state, "red" ) 
+blue.state.col <- cbind( blue.state, "blue" )  
+state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
+names( state.party.df ) <- c( "state.name", "party" )
+
+viz_state_affiliation( state.party.df )
+```
+
+
 ## Calculate the Hypothetical Electoral Vote Totals  {.codefont-small} 
 
 
 **Trump**
 ```{r}
-sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount > Clinton.recount )$Electoral.Votes ) 
 ```
 
 **Clinton**
 ```{r}
-sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes ) 
 ```
 
 
