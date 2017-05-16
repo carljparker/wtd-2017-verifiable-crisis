@@ -65,10 +65,10 @@ state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
 names( state.party.df ) <- c( "state.name", "party" )
 
 library(maps)
+library(ggplot2)
 
-states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
-
-state.map.df <- data.frame( states$state.name <- unlist( lapply( strsplit( states$names, ":" ), function( l ) return( l[1] ) ) ) )
+states <- map_data( "state" )
+state.map.df <- data.frame( unique( cbind( states$region, states$subregion ) )[ , 1 ] )
 names( state.map.df ) <- c( "state.name" )
 
 state.map.party.df <- merge( state.map.df, state.party.df )
