@@ -72,7 +72,7 @@ state.map.df <- data.frame( states$state.name <- unlist( lapply( strsplit( state
 names( state.map.df ) <- c( "state.name" )
 
 state.map.party.df <- merge( state.map.df, state.party.df )
-state.map.party.df$party
+state.map.party.df$party <- as.character( state.map.party.df$party )
 
 states <- map(database = "state", fill = TRUE, col = state.map.party.df$party )
 
