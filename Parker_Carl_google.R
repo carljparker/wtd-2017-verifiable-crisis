@@ -61,14 +61,17 @@ blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State
 red.state.col  <- t( rbind( red.state, "red" ) ) 
 blue.state.col <- t( rbind( blue.state, "blue" ) ) 
 
-rbind( red.state.col, blue.state.col )
+state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
+names( state.party.df ) <- c( "state.name", "party" )
 
 library(maps)
 
 states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
 
-unlist( lapply( strsplit( states$names, ":" ), function( l ) return( l[1] ) ) )
+state.map.df <- data.frame( states$state.name <- unlist( lapply( strsplit( states$names, ":" ), function( l ) return( l[1] ) ) ) )
+names( state.map.df ) <- c( "state.name" )
 
+merge( state.map.df, state.party.df )
 
 #
 # NYT Election Results
