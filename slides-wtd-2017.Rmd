@@ -508,7 +508,7 @@ sum( filter( votes.df, Trump > Clinton )$Electoral.Votes )
 sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
 ```
 
-```{r}
+```{r warning = FALSE, message = FALSE, echo = FALSE}
 red.state  <- tolower( filter( votes.df, Trump > Clinton )$State )
 blue.state <- tolower( filter( votes.df, Trump < Clinton )$State )
 
@@ -516,7 +516,9 @@ red.state.col  <- cbind( red.state, "red" )
 blue.state.col <- cbind( blue.state, "blue" )  
 state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
 names( state.party.df ) <- c( "state.name", "party" )
+```
 
+```{r warning = FALSE, message = FALSE, echo = TRUE}
 viz_state_affiliation( state.party.df )
 ```
 
@@ -556,22 +558,17 @@ The following states flip:
 - Wisconsin
 
 
-```{r}
-sum( filter( votes.df, Trump.recount > Clinton.recount )$Electoral.Votes ) 
-sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes ) 
-
+```{r warning = FALSE, message = FALSE, echo = FALSE}
 red.state  <- tolower( filter( votes.df, Trump.recount > Clinton.recount )$State )
 blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State )
 
 
-#
-# Map a color to each state based on its party.
-#
 red.state.col  <- cbind( red.state, "red" ) 
 blue.state.col <- cbind( blue.state, "blue" )  
 state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
 names( state.party.df ) <- c( "state.name", "party" )
-
+```
+```{r warning = FALSE, message = FALSE, echo = TRUE}
 viz_state_affiliation( state.party.df )
 ```
 
