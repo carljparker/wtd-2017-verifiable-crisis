@@ -170,7 +170,7 @@ The solution is to bring the technical writing and the sample code into
 a single document.
 
 
-## Example: R {.codefont-big}
+## Example: R {.codefont-small}
 
 ```{r}
 n <- 5
@@ -181,7 +181,7 @@ for( i in 1:n ) {
 ```
 
 
-## Example: Python {.codefont-big}
+## Example: Python {.codefont-small}
 
 ```{python}
 n = 5
@@ -309,42 +309,6 @@ the result.
 library(maps)
 id.state <- c( 1:19, 20, 20, 20, 21, 21, 22:30, 31, 31, 31, 31, 32, 32, 32, 33:44, 45, 45, 45, 46, 46, 46, 46, 46, 47, 48, 49 )
 col.state <- ifelse( id.state %% 2 == 0, "red", "blue" )
-```
-
-
-## What actually happened  {.vertical}
-
-```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 6, fig.width = 8}
-states <- map(database = "state", fill = TRUE, col = col.state )
-```
-
-
-## What actually happened
-
-```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center"}
-library( ggplot2 )
-library( fiftystater )
-
-data( "fifty_states" ) # this line is optional due to lazy data loading
-
-crimes <- data.frame( state = tolower( rownames( USArrests ) ), USArrests )
-
-# map_id creates the aesthetic mapping to the state name column in your data
-
-p <- ggplot( crimes, aes( map_id = state ) ) + 
-  # map points to the fifty_states shape data
-  geom_map( aes( fill = Assault ), map = fifty_states ) + 
-  expand_limits( x = fifty_states$long, y = fifty_states$lat ) +
-  coord_map( ) +
-  scale_x_continuous( breaks = NULL ) + 
-  scale_y_continuous( breaks = NULL ) +
-  labs( x = "", y = "" ) +
-  theme( legend.position = "bottom", 
-        panel.background = element_blank( ) )
-
-# add border boxes to AK/HI
-p + fifty_states_inset_boxes( ) 
-
 ```
 
 
@@ -508,6 +472,9 @@ sum( filter( votes.df, Trump > Clinton )$Electoral.Votes )
 sum( filter( votes.df, Trump < Clinton )$Electoral.Votes ) 
 ```
 
+
+## Map the Actual Results {.vertical}
+
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
 red.state  <- tolower( filter( votes.df, Trump > Clinton )$State )
 blue.state <- tolower( filter( votes.df, Trump < Clinton )$State )
@@ -518,7 +485,7 @@ state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
 names( state.party.df ) <- c( "state.name", "party" )
 ```
 
-```{r warning = FALSE, message = FALSE, echo = TRUE}
+```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 6, fig.width = 8}
 viz_state_affiliation( state.party.df )
 ```
 
@@ -536,7 +503,7 @@ Take one percent of President Trump's popular vote from each state.
 Subtract it from his total. Add it to Hillary Clinton's total.
 
 ```{r}
-Trump.one.pct <- floor( Trump * 0.1 ) 
+Trump.one.pct <- floor( Trump * 0.01 ) 
 
 votes.df$Trump.recount   <- Trump   - Trump.one.pct 
 votes.df$Clinton.recount <- Clinton + Trump.one.pct 
@@ -558,6 +525,8 @@ The following states flip:
 - Wisconsin
 
 
+## Map the Recount {.vertical}
+
 ```{r warning = FALSE, message = FALSE, echo = FALSE}
 red.state  <- tolower( filter( votes.df, Trump.recount > Clinton.recount )$State )
 blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State )
@@ -568,7 +537,8 @@ blue.state.col <- cbind( blue.state, "blue" )
 state.party.df <- ( data.frame( rbind( red.state.col, blue.state.col ) ) )
 names( state.party.df ) <- c( "state.name", "party" )
 ```
-```{r warning = FALSE, message = FALSE, echo = TRUE}
+
+```{r warning = FALSE, message = FALSE, echo = FALSE, fig.align = "center", fig.height = 6, fig.width = 8}
 viz_state_affiliation( state.party.df )
 ```
 
