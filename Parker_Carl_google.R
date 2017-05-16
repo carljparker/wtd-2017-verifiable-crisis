@@ -43,7 +43,7 @@ attach( votes.df )
 Trump.recount   <- 0
 Clinton.recount <- 0
 
-Trump.one.pct <- floor( Trump * 0.1 ) 
+Trump.one.pct <- floor( Trump * 0.01 ) 
 
 votes.df$Trump.recount   <- Trump   - Trump.one.pct 
 votes.df$Clinton.recount <- Clinton + Trump.one.pct 
@@ -52,8 +52,23 @@ Winner <- ifelse( Trump.recount > Clinton.recount, "Trump", "Clinton" )
 
 detach( votes.df )
 
-sum( filter( votes.df, Trump.recount > Clinton )$Electoral.Votes ) 
-sum( filter( votes.df, Trump.recount < Clinton )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount > Clinton.recount )$Electoral.Votes ) 
+sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes ) 
+
+red.state  <- tolower( filter( votes.df, Trump.recount > Clinton.recount )$State )
+blue.state <- tolower( filter( votes.df, Trump.recount < Clinton.recount )$State )
+
+red.state.col  <- t( rbind( red.state, "red" ) ) 
+blue.state.col <- t( rbind( blue.state, "blue" ) ) 
+
+rbind( red.state.col, blue.state.col )
+
+library(maps)
+
+states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
+
+unlist( lapply( strsplit( states$names, ":" ), function( l ) return( l[1] ) ) )
+
 
 #
 # NYT Election Results
