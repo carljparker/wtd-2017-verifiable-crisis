@@ -71,7 +71,10 @@ states <- map(database = "state", fill = TRUE, col = c( "red", "blue" ) )
 state.map.df <- data.frame( states$state.name <- unlist( lapply( strsplit( states$names, ":" ), function( l ) return( l[1] ) ) ) )
 names( state.map.df ) <- c( "state.name" )
 
-merge( state.map.df, state.party.df )
+state.map.party.df <- merge( state.map.df, state.party.df )
+state.map.party.df$party
+
+states <- map(database = "state", fill = TRUE, col = state.map.party.df$party )
 
 #
 # NYT Election Results
