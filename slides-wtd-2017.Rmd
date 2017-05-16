@@ -103,7 +103,7 @@ Extensions to enable Markdown to embed executable code.
 Tool that builds the RMarkdown to various output formats.
 
 
-## RMarkdown and Knitr 2
+## RMarkdown and Knitr 
 
 ![](images/knitr-process.png)
 
@@ -170,7 +170,7 @@ The solution is to bring the technical writing and the sample code into
 a single document.
 
 
-## Example: R {.codefont-big}
+## Example: R {.codefont-med}
 
 ```{r}
 n <- 5
@@ -196,9 +196,11 @@ for( i in 1:n ) {
 <http://rmarkdown.rstudio.com/authoring_knitr_engines.html#rcpp>
 
 
-## {.embiggen .vertical}
+##  {.embiggen-more .vertical-high} 
 
+<div class = "centered">
 Knitpy
+</div>
 
 
 <div class="notes">
@@ -210,28 +212,17 @@ Knitpy
 </div>
 
 
-## {.embiggen .vertical} 
+##  {.embiggen-more .vertical-high} 
 
+<div class = "centered">
 Jupyter Notebooks  
+</div>
 
 
-## {.embiggen .vertical} 
+##  {.embiggen-more .vertical-high} 
 
+<div class = "centered">
 CWEB
-
-
-<div class="notes">
-
-## Bootstrap
-
-- The HTML documentation for Bootstrap uses Bootstrap for styling.
-
-
-[Bootstrap](http://getbootstrap.com/examples/navbar-static-top/#)
-
-Storyteller
-Executable Specifications (Microsoft).
-
 </div>
 
 
@@ -544,15 +535,22 @@ sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes )
 
 ## Nate Silver & FiveThirtyEight
 
-What A Difference 2 Percentage Points Makes
+What A Difference 2 Percentage Points Makes {.embiggen}
+
+<div style = "font-size: 0.55em; font-weight: bold">
 <https://fivethirtyeight.com/features/what-a-difference-2-percentage-points-makes/>
+</div>
 
 
 ## {.embiggen .vertical}
 
+<div class = "centered">
 The source code is real
 
-- A.J. Rossini, Literate Statistical Practice
+<div style = "font-size: 0.55em">
+(A.J. Rossini)
+</div>
+</div>
 
 
 
