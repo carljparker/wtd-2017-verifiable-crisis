@@ -33,7 +33,9 @@ NPR later referred to Nosek's work as <em>The Experiment Experiment</em>.
 
 ![](images/science-experiment.png)
 
+<div class = "notes">
 <http://science.sciencemag.org/content/349/6251/aac4716>
+</div>
 
 
 ## The Experiment Experiment  {.embiggen}
@@ -65,12 +67,14 @@ researchers themselves_.
 
 ## Reproducible Research 
 
-Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.\*
+Roger Peng (Johns Hopkins) proposed the idea of Reproducible Research.
 
 - <em>Replication</em>, the ability to re-enact the experiment was too high a bar.
 - <em>Reproducibility</em>, the ability to reach the same conclusions given the same data and computational software.
 
-\* Reproducible Research in Computational Science, Science, Dec, 2011
+<div class = "notes">
+Reproducible Research in Computational Science, Science, Dec, 2011
+</div>
 
 
 ## Reproducible Research 
@@ -81,7 +85,7 @@ Reproducibility requires that any published research make available both data th
 ## Enabling Reproducible Research
 
 A barrier to reproducible research is that the code gets out of sync
-with the published paper&emdash;or the code is simply lost.
+with the published paper or the code is simply lost.
 
 The solution was to find a way to _keep the research paper and the code
 together and in sync_.
@@ -191,9 +195,12 @@ for( i in 1:n ) {
 - Bash
 - And others . . .
 
+
+<div class = "notes">
 **Complete list of supported languages**
 
 <http://rmarkdown.rstudio.com/authoring_knitr_engines.html#rcpp>
+</div>
 
 
 ##  {.embiggen-more .vertical-high} 
@@ -235,10 +242,13 @@ Lies, Fake News, and Statistics
 
 
 <div class="notes">
-
 In recent times, I have started to feel as though I am swimming in an
 ocean of misinformation.
 
+Whenver I did in...I find the information is contaminated with spin,
+misrepresentations, distortions, and just plain inaccuracies.
+
+It becomes so frustrating.
 </div>
 
 
@@ -258,9 +268,9 @@ ocean of misinformation.
 
 ## Verifiable News  {.embiggen}
 
-- Scrape a website
-- Access online databases 
 - Call web services
+- Access online databases 
+- Scrape a website
 
 
 ## Example: How close was the election <em>really</em>?
@@ -533,9 +543,9 @@ sum( filter( votes.df, Trump.recount < Clinton.recount )$Electoral.Votes )
 
 # Epilogue
 
-## Nate Silver & FiveThirtyEight
+## Nate Silver & FiveThirtyEight            {.embiggen}
 
-What A Difference 2 Percentage Points Makes {.embiggen}
+What A Difference 2 Percentage Points Makes 
 
 <div style = "font-size: 0.55em; font-weight: bold">
 <https://fivethirtyeight.com/features/what-a-difference-2-percentage-points-makes/>
