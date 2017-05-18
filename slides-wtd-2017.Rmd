@@ -465,9 +465,7 @@ knitr::kable( head( votes.df, 3 ) )
 ```
 
 
-## Calculate Electoral Vote Totals {.codefont-med} 
-
-Count the actual electoral votes for each candidate.
+## Calculate Actual Electoral Vote Totals {.codefont-med} 
 
 **Trump**
 ```{r}
@@ -550,7 +548,7 @@ viz_state_affiliation( state.party.df )
 ```
 
 
-## Calculate the Hypothetical Electoral Vote Totals  {.codefont-med} 
+## Calculate Hypothetical Electoral Vote Totals  {.codefont-med} 
 
 
 **Trump**
