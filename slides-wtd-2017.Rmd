@@ -13,7 +13,7 @@ output:
 <script>
     $(document).ready(function() {
     $('slide:not(.title-slide, .backdrop, .segue)').append('<footer></footer>');    
-    $('footer').attr('label', 'My Amazing Footer');
+    $('footer').attr('label', "Copyright 2017 Home Box Office, Inc. All Rights Reserved.");
 
   })
 </script>
