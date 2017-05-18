@@ -8,6 +8,29 @@ output:
     widescreen: true
 ---
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+    $('slide:not(.title-slide, .backdrop, .segue)').append('<footer></footer>');    
+    $('footer').attr('label', 'My Amazing Footer');
+
+  })
+</script>
+
+<style>
+  footer:after {
+    font-size: 12pt;
+    content: attr(label);
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    line-height: 1.9;
+    display: block;
+  }
+</style>
+
+
 # Part 1: The Replication Crisis in Science
 
 <div class="notes">
