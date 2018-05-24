@@ -15,9 +15,11 @@ Advance the slides using arrow keys or PgUp/PgDn.
 Clicking on slides in the presenters window will _not_ advance the
 slides in the main window.
 
-More information on managing the presentation at the following URL:
+More information on managing the presentation at the following URLs:
 
-<https://rmarkdown.rstudio.com/ioslides_presentation_format.html#overview>
+<https://rmarkdown.rstudio.com/ioslides_presentation_format.html#display_modes>
+
+<https://rmarkdown.rstudio.com/ioslides_presentation_format.html#presenter_mode>
 
 ---
 
